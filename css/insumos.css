@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(#F2FF82, #E6F27E, #7A832D);
+    
+}
+  .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 100px 50px;
+
+  }
+
+  .container .card{
+    position: relative;
+    width: 350px;
+    height: 300px;
+    border-radius: 20px;
+    box-shadow: 0 35px 80px rgba(0, 0, 0,.15);
+    background: #FFF;
+    transition: .5s;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+   }
+
+   .container .card:hover{
+    height: 400px;
+   }
+
+   .container .card .caixaimg{
+    position: absolute;
+    top: 20px;
+    width: 300px;
+    height: 220px;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: .5s ;
+   }
+  
+   .container .card .caixaimg img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+   }
+
+.container .card .conteudo{
+  position: absolute;
+  top: 250px;
+  width: 100%;
+  height: 35px;
+  padding: 0 30px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.container .card:hover .caixaimg{
+  top: -100px;
+  scale: .75;
+  box-shadow: 0 15px 45px rgba (0,0,0.2);
+}
+
+.container .card:hover .conteudo{
+  top: 150px;
+  height: 250px;
+}
+
+.container .card .conteudo h2{
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 3rem;
+  color: var(--cor);
+  font-family: "Dosis";
+}
+
+.container .card .conteudo p{
+  color: #333;
+  font-family: "Dosis";
+  font-size: 20px;
+}
