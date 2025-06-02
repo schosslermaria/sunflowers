@@ -9,7 +9,6 @@ body {
 }
 
 .header {
-    background: ;
     padding: 1rem 0;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -283,3 +282,39 @@ footer {
     height: 100%;
 }
 
+#esquerda{ 
+
+
+}
+.manos {
+  width: 45vw;
+  height: 70vh;
+  background-color: #428a60;
+  float: left;
+  margin-right: 2vw;
+  margin-left: 2vw;
+  border-radius: 30px;
+    display: flex;
+  flex-wrap: wrap;
+}
+
+.esqm{
+  background-color: #ffffff;
+  height: 225px;
+  width: 300px;
+  margin: auto;
+  border-radius: 10px;
+
+
+}
+
+
+
+.dirm {
+  background-color: #7e4f1a;
+  height: 225px;
+  width: 300px;
+  margin: auto;
+  border-radius: 10px;
+
+}
