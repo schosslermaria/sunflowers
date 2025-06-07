@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,56 +11,67 @@
 <body>
   <header class="header">
     <img id="logo" src="img/logo.png" width="300px" alt="Logo do Sun Flowers" />
-    <nav class="navbar">
-      <ul>
-        <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#objetivo">Objetivo</a></li>
-        <li><a href="#materiais">Insumos</a></li>
-        <li><a href="#sobre-nos">Sobre Nós</a></li>
-        <li><a href="#contato">Contato</a></li>
-      </ul>
-    </nav>
   </header>
 
   <main>
-
     <section id="esquerda" class="manos">
-      <div class="esqm">Guia do Site</div>
-      <div class="esqm">Novidades</div>
-      <div class="esqm">Clima / Localização</div>
-      <div class="esqm">Tutoriais: Como Plantar</div>
+      <input id="check" type="checkbox" />
+<div id="guia" class="esqm">
+  <img src="/img/guia.jpg" alt="">
+  <div class="texto" style="display:none;"></div>
+</div>
+<div id="nov" class="esqm">
+  <img  src="/img/nov.jpg" alt="">
+  <div class="texto" style="display:none;"></div>
+</div>
+<div id="clima" class="esqm">
+  <img src="/img/clima.jpg" alt="">
+  <div class="texto" style="display:none;"></div>
+</div>
+<div id="tutorial" class="esqm">
+  <img id="imagemTutorial" src="/img/tutorial.jpg" alt="Tutorial" />
+  <div class="texto" style="display:none;"></div>
+</div>
+
     </section>
 
     <section id="direita" class="manos">
-      <div class="dirm">Sua Conta / Perfil</div>
-      <div class="dirm">Rega Programada</div>
-      <div class="dirm">Minhas Plantas</div>
-      <div class="dirm">Catálogo de Plantas</div>
+<div id="perfil" class="dirm">
+  <img src="/img/perfil.jpg" alt="">
+  <div class="texto" style="display:none;"></div>
+</div>
+<div id="rega" class="dirm">
+  <img src="/img/rega.jpg" alt="">
+  <div class="texto" style="display:none;"></div>
+</div>
+<div id="plantas" class="dirm">
+  <img src="/img/plantas.jpg" alt="">
+  <div class="texto" style="display:none;"></div>
+</div>
+<div id="catalogo" class="dirm"><a href="ai.html">
+  <img src="/img/catalogo.jpg" alt=""></a>
+  <div class="texto" style="display:none;"></div>
+</div>
     </section>
-<div style="clear: both;"></div>
+    <div style="clear: both;"></div>
 
     <section id="sobre-nos" class="section">
-      <h2>Quem Somos?
-</h2>
-      <p>Somos dois desenvolvedores amadores e estudantes do Instituto Federal do Paraná (IFPR), campus Toledo, dedicados ao aprimoramento contínuo de nossas competências na área de tecnologia da informação.
-      </p>
-      <h2>Objetivo do Site
-</h2>
-      <p>
+      <h2>Quem Somos?</h2>
+      <p>Somos dois desenvolvedores amadores e estudantes do Instituto Federal do Paraná (IFPR), campus Toledo, dedicados ao aprimoramento contínuo de nossas competências na área de tecnologia da informação.</p>
+      <h2>Objetivo do Site</h2>
+      <p>O desenvolvimento do Plantae Wiki tem como propósito proporcionar uma experiência prática no campo da programação, com ênfase no manuseio de bancos de dados e no desenvolvimento backend. Além de contribuir para o enriquecimento de nosso currículo técnico, buscamos, sempre que possível, oferecer suporte e orientação a pessoas interessadas em atividades relacionadas à jardinagem.
 
-O desenvolvimento do Plantae Wiki tem como propósito proporcionar uma experiência prática no campo da programação, com ênfase no manuseio de bancos de dados e no desenvolvimento backend. Além de contribuir para o enriquecimento de nosso currículo técnico, buscamos, sempre que possível, oferecer suporte e orientação a pessoas interessadas em atividades relacionadas à jardinagem.      </p>
-    <img src="" alt="">
-</section>
+</p>
+      <img id="joaomaria" src="/img/Imagem do WhatsApp de 2025-06-07 à(s) 16.15.34_297a67d2.jpg" alt="">
+    </section>
 
-<section id="contato" class="section contato">
-  <h2>Contato</h2>
-  <p><strong>Email:</strong> contato@sunflowers.com.br</p>
-  <p><strong>Telefone:</strong> (11) 99999-9999</p>
-  <p><strong>Endereço:</strong> Rua das Plantinhas, 123 - Jardim Verde, SP</p>
-  <p><strong>Atendimento:</strong> Segunda à Sexta, das 8h às 18h</p>
-</section>
-
-
+    <section id="contato" class="section contato">
+      <h2>Contato</h2>
+      <p><strong>Email:</strong> joaocosmo1909@gmail.com</p>
+      <p><strong>Telefone:</strong> (44) 99726-9122</p>
+      <p><strong>Email:</strong> marialauraschosslerpereira@gmail.com</p>
+      <p><strong>Telefone:</strong> (45) 99846-5824</p>
+    </section>
   </main>
 
   <footer>
@@ -72,6 +82,47 @@ O desenvolvimento do Plantae Wiki tem como propósito proporcionar uma experiên
       </div>
     </div>
   </footer>
-</body>
 
+<script>
+const checkbox = document.getElementById('check');
+
+function toggleArea(id, descricao) {
+  const area = document.getElementById(id);
+  const img = area.querySelector('img');
+  let texto = area.querySelector('.texto');
+
+  if (!texto) {
+    texto = document.createElement('div');
+    texto.className = 'texto';
+    texto.style.display = 'none';
+    area.appendChild(texto);
+  }
+
+  if (checkbox.checked) {
+    img.style.display = 'none';
+    area.style.backgroundColor = 'white';
+    texto.textContent = descricao;
+    texto.style.display = 'block';
+  } else {
+    img.style.display = 'block';
+    area.style.backgroundColor = 'transparent';
+    texto.style.display = 'none';
+    texto.textContent = '';
+  }
+}
+
+checkbox.addEventListener('change', () => {
+  toggleArea('guia', 'Este botão ativa ou desativa as descrições de cada seção do site.');
+  toggleArea('nov', 'Confira aqui as últimas novidades e atualizações do Plantae Wiki.');
+  toggleArea('clima', 'Veja o clima atual da sua região para saber as melhores práticas de cultivo.');
+  toggleArea('tutorial', 'Aprenda jardinagem e agricultura básica: como plantar, cuidar e manter suas plantas saudáveis.');
+  toggleArea('perfil', 'Acesse e edite as informações do seu perfil de usuário.');
+  toggleArea('rega', 'Veja a lista das plantas que precisam ser regadas hoje.');
+  toggleArea('plantas', 'Aqui estão as plantas que você selecionou e cadastrou no seu perfil.');
+  toggleArea('catalogo', 'Explore o catálogo completo de plantas com detalhes como tempo de plantio, duração e muito mais. Você pode adicionar plantas ao seu perfil a partir daqui.');
+});
+</script>
+
+
+</body>
 </html>

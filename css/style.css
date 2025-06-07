@@ -1,6 +1,8 @@
+/* Importações de fontes e animações */
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 @import 'animate.css';
 
+/* RESET E ESTILIZAÇÕES GLOBAIS */
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
@@ -9,6 +11,7 @@ body {
   overflow-x: hidden;
 }
 
+/* RESPONSIVIDADE */
 @media (max-width: 1000px) {
   .manos {
     width: 90vw;
@@ -35,6 +38,11 @@ body {
   text-align: center;
   background-color: #aadfb8e8;
   box-shadow: 0 1vh 1.5vh rgba(0, 0, 0, 0.1);
+}
+
+#logo {
+  margin: 2vh;
+  max-width: 30vw;
 }
 
 .navbar ul {
@@ -66,42 +74,35 @@ body {
   transform: scale(1.1);
 }
 
-/* LOGO */
-#logo {
-  margin: 2vh;
-  max-width: 30vw;
-}
-
-/* MANOS */
+/* SEÇÕES PRINCIPAIS: MANOS (esquerda e direita) */
 .manos {
   width: 45vw;
   height: 70vh;
   background-color: #b980b6f2;
   float: left;
-  margin-right: 2vw;
-  margin-left: 2vw;
+  margin: 8vh 2vw 0 2vw;
   border-radius: 3vw;
   display: flex;
   flex-wrap: wrap;
-  margin-top: 8vh;
   justify-content: center;
   align-items: center;
   box-shadow: 0 0 2vh rgba(0, 0, 0, 0.15);
 }
 
-/* BLOCOS INTERNOS */
+/* BLOCOS INTERNOS DAS SEÇÕES MANOS */
 .esqm,
 .dirm {
   height: 31vh;
   width: 20vw;
   margin: auto;
   border-radius: 1.5vw;
-  background: linear-gradient(135deg, #ffffff, #e6f5eb);
   box-shadow: 0 1vh 1.5vh rgba(0, 0, 0, 0.1);
   font-weight: bold;
   color: #3e2723;
   display: flex;
   align-items: center;
+    overflow: hidden;
+
   justify-content: center;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -113,7 +114,7 @@ body {
   box-shadow: 0 1.2vh 2vh rgba(0, 0, 0, 0.2);
 }
 
-/* SOBRE NÓS */
+/* SEÇÃO SOBRE NÓS */
 #sobre-nos {
   background: #f4fff4;
   padding: 5vh 3vw;
@@ -122,12 +123,12 @@ body {
   border-radius: 1vw;
   height: 90vh;
   box-shadow: 0 1vh 2vh rgba(0, 0, 0, 0.08);
-font-weight: bold;
+  font-weight: bold;
 }
 
 #sobre-nos h2 {
   color: #2c572c;
-  font-family: 'Raleway';
+  font-family: 'Raleway', sans-serif;
   text-align: center;
   margin-bottom: 2vh;
   font-size: 2.5vw;
@@ -140,7 +141,15 @@ font-weight: bold;
   font-size: 1.2vw;
 }
 
-/* CONTATO */
+#joaomaria {
+  height: 30vh;
+  width: 12.5vw;
+  display: flex;
+  margin: auto;
+  border-radius: 10px;
+}
+
+/* SEÇÃO CONTATO */
 #contato {
   margin-top: 10vh;
   padding: 5vh 3vw;
@@ -205,3 +214,22 @@ footer {
   text-align: center;
   z-index: 2;
 }
+
+/* INPUT CHECKBOX (controle da numeração dos blocos) */
+#check {
+  background-color: #ffffff;
+  color: #346634;
+  position: absolute;  
+  left: 2.9vw;
+  width: 20.4vw;
+  height: 31vh;
+  top: 27.6vh;
+  opacity: 0;
+}
+
+
+/* TAMANHO DAS IMAGENS PAGINA INICIAL
+#imagem{
+height: 31vh;
+  width: 100%;
+}*/
