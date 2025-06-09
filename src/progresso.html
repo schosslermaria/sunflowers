@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Progresso das Plantas</title>
+  <link rel="stylesheet" href="/css/progresso.css" />
+</head>
+<body>
+  <main class="container">
+    <h1 class="title">Veja a lista das plantas que precisam ser regadas hoje.</h1>
+
+    <section class="plant-card" data-id="samambaia">
+      <img src="/img/samabaia.png" alt="Samambaia" class="plant-img" />
+      <div class="plant-content">
+        <h2>Samambaia</h2>
+        <label>
+          <input type="checkbox" class="checkbox-regar" /> Regada hoje
+        </label>
+        <div class="calendar">
+          <span>D</span><span>S</span><span>T</span><span>Q</span><span>Q</span><span>S</span><span>S</span>
+          <div class="calendar-dots"></div>
+        </div>
+        <div class="progress-bar">
+          <div class="progress" style="width: 0%"></div>
+        </div>
+        <p><strong>Dias para crescer:</strong> <span class="dias">5</span></p>
+      </div>
+    </section>
+
+    <section class="plant-card" data-id="espada">
+      <img src="/img/espadadesaojorge.jpg" alt="Espada-de-São-Jorge" class="plant-img" />
+      <div class="plant-content">
+        <h2>Espada-de-São-Jorge</h2>
+        <label>
+          <input type="checkbox" class="checkbox-regar" /> Regada hoje
+        </label>
+        <div class="calendar">
+          <span>D</span><span>S</span><span>T</span><span>Q</span><span>Q</span><span>S</span><span>S</span>
+          <div class="calendar-dots"></div>
+        </div>
+        <div class="progress-bar">
+          <div class="progress" style="width: 0%"></div>
+        </div>
+        <p><strong>Dias para crescer:</strong> <span class="dias">3</span></p>
+      </div>
+    </section>
+  </main>
+<script>
+document.querySelectorAll('.plant-card').forEach(card => {
+  const id = card.dataset.id;
+  const checkbox = card.querySelector('.checkbox-regar');
+  const progressBar = card.querySelector('.progress');
+  const diasElem = card.querySelector('.dias');
+
+  const today = new Date().getDay(); // 0 = domingo, ..., 6 = sábado
+
+  // Criar bolinhas do calendário
+  const dotContainer = document.createElement('div');
+  dotContainer.classList.add('calendar-dots');
+  for (let i = 0; i < 7; i++) {
+    const dot = document.createElement('span');
+    dotContainer.appendChild(dot);
+  }
+  card.querySelector('.calendar').appendChild(dotContainer);
+
+  // Carregar progresso do localStorage
+  let data = JSON.parse(localStorage.getItem(id)) || {
+    dias: parseInt(diasElem.textContent),
+    regas: []
+  };
+
+  // Atualiza interface com dados salvos
+  updateUI();
+
+  checkbox.addEventListener('change', () => {
+    if (checkbox.checked && !data.regas.includes(today)) {
+      data.regas.push(today);
+      if (data.dias > 0) data.dias -= 1;
+      localStorage.setItem(id, JSON.stringify(data));
+      updateUI();
+    }
+    checkbox.checked = false; // Desmarca após salvar
+  });
+
+  function updateUI() {
+    diasElem.textContent = data.dias;
+    const dots = card.querySelectorAll('.calendar-dots span');
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('done', data.regas.includes(i));
+    });
+    const progresso = Math.round(((7 - data.dias) / 7) * 100);
+    progressBar.style.width = `${progresso}%`;
+  }
+});
+</script>
+
+  <script src="script.js"></script>
+</body>
+</html>

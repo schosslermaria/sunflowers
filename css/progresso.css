@@ -1,0 +1,109 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #fef9ef;
+  color: #2e261b;
+}
+
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.title {
+  text-align: center;
+  font-size: 26px;
+  margin-bottom: 40px;
+  font-weight: bold;
+}
+
+.plant-card {
+  display: flex;
+  background: #f1e1b4;
+  border-radius: 14px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+  margin-bottom: 30px;
+  transition: transform 0.2s ease;
+}
+
+.plant-card:hover {
+  transform: scale(1.01);
+}
+
+.plant-img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+}
+
+.plant-content {
+  padding: 20px;
+  flex: 1;
+}
+
+.plant-content h2 {
+  margin-top: 0;
+}
+
+label {
+  display: block;
+  margin: 10px 0;
+}
+
+.calendar {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  margin: 10px 0;
+}
+
+.calendar span {
+  display: inline-block;
+  width: 25px;
+  text-align: center;
+  font-weight: bold;
+  color: #6a4e1d;
+}
+
+.calendar-dots {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+
+.calendar-dots::before {
+  content: '';
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.calendar-dots span {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #dcd2ad;
+  margin: 0 3px;
+}
+
+.calendar-dots .done {
+  background: #4caf50;
+}
+
+.progress-bar {
+  width: 100%;
+  background: #ddd4ad;
+  height: 12px;
+  border-radius: 6px;
+  overflow: hidden;
+  margin: 10px 0;
+}
+
+.progress {
+  height: 100%;
+  background: #3fbf57;
+  width: 0%;
+  transition: width 0.3s ease;
+}
