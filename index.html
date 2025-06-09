@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,53 +16,61 @@
 
   <main>
     <section id="esquerda" class="manos">
-      <input id="check" type="checkbox" />
-<div id="guia" class="esqm">
-  <img id="g" src="/img/guia.jpg" alt="">
-  <div class="texto" style="display:none;"></div>
-</div>
-<div id="nov" class="esqm">
-  <img id="n"  src="/img/nov.jpg" alt="">
-  <div class="texto" style="display:none;"></div>
-</div>
-<div id="clima" class="esqm">
-  <img id="cl" src="/img/clima.jpg" alt="">
-  <div class="texto" style="display:none;"></div>
-</div>
-<div id="tutorial" class="esqm">
-  <img id="t" src="/img/tutorial.jpg" alt="Tutorial" />
-  <div class="texto" style="display:none;"></div>
-</div>
+      <label for="check"
+        style="position: absolute; top: 27.6vh; left: 2.9vw; width: 20.4vw; height: 31vh; z-index: 10; cursor: pointer;">
+        <input id="check" type="checkbox" style="opacity: 0; width: 100%; height: 100%;" />
+      </label>
+
+      <div id="guia" class="esqm">
+        <img id="g" src="/img/guia.jpg" alt="">
+        <div class="texto" style="display:none;"></div>
+      </div>
+      <div id="nov" class="esqm">
+        <img id="n" src="/img/nov.jpg" alt="">
+        <div class="texto" style="display:none;"></div>
+      </div>
+      <div id="clima" class="esqm">
+        <img id="cl" src="/img/clima.jpg" alt="">
+        <div class="texto" style="display:none;"></div>
+      </div>
+      <div id="tutorial" class="esqm">
+        <img id="t" src="/img/tutorial.jpg" alt="Tutorial" />
+        <div class="texto" style="display:none;"></div>
+      </div>
 
     </section>
 
     <section id="direita" class="manos">
-<div id="perfil" class="dirm">
-  <img id="p" src="/img/perfil.jpg" alt="">
-  <div class="texto" style="display:none;"></div>
-</div>
-<div id="rega" class="dirm">
-  <img id="r" src="/img/rega.jpg" alt="">
-  <div class="texto" style="display:none;"></div>
-</div>
-<div  id="plantas" class="dirm">
-  <img id="pl" src="/img/plantas.jpg" alt="">
-  <div class="texto" style="display:none;"></div>
-</div>
-<div id="catalogo" class="dirm"><a href="catalogo.html">
-  <img id="c" src="/img/catalogo.jpg" alt=""></a>
-  <div class="texto" style="display:none;"></div>
-</div>
+      <div id="perfil" class="dirm">
+        <img id="p" src="/img/perfil.jpg" alt="">
+        <div class="texto" style="display:none;"></div>
+      </div>
+      <div id="rega" class="dirm">
+        <img id="r" src="/img/rega.jpg" alt="">
+        <div class="texto" style="display:none;"></div>
+      </div>
+      <div id="plantas" class="dirm">
+        <img id="pl" src="/img/plantas.jpg" alt="">
+        <div class="texto" style="display:none;"></div>
+      </div>
+      <div id="catalogo" class="dirm"><a href="catalogo.html">
+          <img id="c" src="/img/catalogo.jpg" alt=""></a>
+        <div class="texto" style="display:none;"></div>
+      </div>
     </section>
     <div style="clear: both;"></div>
 
     <section id="sobre-nos" class="section">
       <h2>Quem Somos?</h2>
-      <p>Somos dois desenvolvedores amadores e estudantes do Instituto Federal do Paraná (IFPR), campus Toledo, dedicados ao aprimoramento contínuo de nossas competências na área de tecnologia da informação.</p>
+      <p>Somos dois desenvolvedores amadores e estudantes do Instituto Federal do Paraná (IFPR), campus Toledo,
+        dedicados ao aprimoramento contínuo de nossas competências na área de tecnologia da informação.</p>
       <h2>Objetivo do Site</h2>
-      <p>O desenvolvimento do Plantae Wiki tem como propósito proporcionar uma experiência prática no campo da programação, com ênfase no manuseio de bancos de dados e no desenvolvimento backend. Além de contribuir para o enriquecimento de nosso currículo técnico, buscamos, sempre que possível, oferecer suporte e orientação a pessoas interessadas em atividades relacionadas à jardinagem.
+      <p>O desenvolvimento do Plantae Wiki tem como propósito proporcionar uma experiência prática no campo da
+        programação, com ênfase no manuseio de bancos de dados e no desenvolvimento backend. Além de contribuir para o
+        enriquecimento de nosso currículo técnico, buscamos, sempre que possível, oferecer suporte e orientação a
+        pessoas interessadas em atividades relacionadas à jardinagem.
 
-</p>
+      </p>
       <img id="joaomaria" src="/img/Imagem do WhatsApp de 2025-06-07 à(s) 16.15.34_297a67d2.jpg" alt="">
     </section>
 
@@ -83,40 +92,45 @@
     </div>
   </footer>
 
-<script>
-const checkbox = document.getElementById('check');
+  <script>
+    const checkbox = document.getElementById('check');
 
-function toggleArea(id, descricao) {
-  const area = document.getElementById(id);
-  const img = area.querySelector('img');
-  const texto = area.querySelector('.texto');
+    function toggleArea(id, descricao) {
+      const area = document.getElementById(id);
+      const img = area.querySelector('img');
+      const texto = area.querySelector('.texto');
 
-  if (checkbox.checked) {
-    img.style.display = 'none';
-    texto.textContent = descricao;
-    texto.style.display = 'block';
-    area.classList.add('moldura-ativa');
-  } else {
-    img.style.display = 'block';
-    texto.style.display = 'none';
-    texto.textContent = '';
-    area.classList.remove('moldura-ativa');
-  }
-}
+      if (checkbox.checked) {
+        img.style.opacity = '0'; // Esconde visualmente a imagem sem quebrar layout
+        img.style.pointerEvents = 'none'; // Evita interações
+        texto.textContent = descricao;
+        texto.style.display = 'block';
+        area.classList.add('moldura-ativa');
+      } else {
+        img.style.opacity = '1'; // Mostra a imagem de novo
+        img.style.pointerEvents = 'auto';
+        texto.style.display = 'none';
+        texto.textContent = '';
+        area.classList.remove('moldura-ativa');
+      }
+    }
 
-checkbox.addEventListener('change', () => {
-  toggleArea('guia', 'Este botão ativa ou desativa as descrições de cada seção do site.');
-  toggleArea('nov', 'Confira aqui as últimas novidades e atualizações do Plantae Wiki.');
-  toggleArea('clima', 'Veja o clima atual da sua região para saber as melhores práticas de cultivo.');
-  toggleArea('tutorial', 'Aprenda jardinagem e agricultura básica: como plantar, cuidar e manter suas plantas saudáveis.');
-  toggleArea('perfil', 'Acesse e edite as informações do seu perfil de usuário.');
-  toggleArea('rega', 'Veja a lista das plantas que precisam ser regadas hoje.');
-  toggleArea('plantas', 'Aqui estão as plantas que você selecionou e cadastrou no seu perfil.');
-  toggleArea('catalogo', 'Explore o catálogo completo de plantas com detalhes como tempo de plantio, duração e muito mais. Você pode adicionar plantas ao seu perfil a partir daqui.');
-});
-</script>
+    checkbox.addEventListener('change', () => {
+      const areas = [
+        ['guia', 'Este botão ativa ou desativa as descrições de cada seção do site.'],
+        ['nov', 'Confira aqui as últimas novidades e atualizações do Plantae Wiki.'],
+        ['clima', 'Veja o clima atual da sua região para saber as melhores práticas de cultivo.'],
+        ['tutorial', 'Aprenda jardinagem e agricultura básica: como plantar, cuidar e manter suas plantas saudáveis.'],
+        ['perfil', 'Acesse e edite as informações do seu perfil de usuário.'],
+        ['rega', 'Veja a lista das plantas que precisam ser regadas hoje.'],
+        ['plantas', 'Aqui estão as plantas que você selecionou e cadastrou no seu perfil.'],
+        ['catalogo', 'Explore nosso catálogo detalhado de plantas, incluindo informações sobre o tempo de plantio e duração. ']
+      ];
 
-
+      areas.forEach(([id, descricao]) => toggleArea(id, descricao));
+    });
+  </script>
 
 </body>
+
 </html>
