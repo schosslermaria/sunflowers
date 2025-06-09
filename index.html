@@ -89,25 +89,18 @@ const checkbox = document.getElementById('check');
 function toggleArea(id, descricao) {
   const area = document.getElementById(id);
   const img = area.querySelector('img');
-  let texto = area.querySelector('.texto');
-
-  if (!texto) {
-    texto = document.createElement('div');
-    texto.className = 'texto';
-    texto.style.display = 'none';
-    area.appendChild(texto);
-  }
+  const texto = area.querySelector('.texto');
 
   if (checkbox.checked) {
     img.style.display = 'none';
-    area.style.backgroundColor = 'white';
     texto.textContent = descricao;
     texto.style.display = 'block';
+    area.classList.add('moldura-ativa');
   } else {
     img.style.display = 'block';
-    area.style.backgroundColor = 'transparent';
     texto.style.display = 'none';
     texto.textContent = '';
+    area.classList.remove('moldura-ativa');
   }
 }
 
@@ -122,6 +115,7 @@ checkbox.addEventListener('change', () => {
   toggleArea('catalogo', 'Explore o catálogo completo de plantas com detalhes como tempo de plantio, duração e muito mais. Você pode adicionar plantas ao seu perfil a partir daqui.');
 });
 </script>
+
 
 
 </body>

@@ -254,3 +254,27 @@ height: 31vh;
 height: 31vh;
   width: 100%;
 }*/
+
+/* Moldura ativa no modo de texto */
+.esqm.moldura-ativa, .dirm.moldura-ativa {
+  background-image: url('/img/moldura.jpg'); /* Caminho da imagem da moldura */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent !important;
+  position: relative;
+}
+
+/* Texto centralizado dentro da moldura */
+.texto {
+  font-size: 1.1vw;
+  padding: 1vw;
+  text-align: center;
+  color: #2f2f2f;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 90%;
+}
