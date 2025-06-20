@@ -1,126 +1,218 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo completo</title>
-    <link rel="stylesheet" href="ai.css">
-</head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Calendário de Regas</title>
+  <style>
+    /* --- Reset básico e variáveis --- */
+    :root {
+      --bg-base: #fef9ef;
+      --bg-card: #f1e1b4;
+      --text-base: #2e261b;
+      --accent: #4caf50;
+      --dot-bg: #dcd2ad;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--bg-base);
+      color: var(--text-base);
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 30px;
+      font-weight: bold;
+    }
+
+    .plant-card {
+      background: var(--bg-card);
+      border-radius: 14px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+      overflow: hidden;
+      margin-bottom: 30px;
+      transition: transform 0.2s ease;
+      display: flex;
+      align-items: center;
+    }
+    .plant-card:hover {
+      transform: scale(1.01);
+    }
+
+    .plant-img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .plant-content {
+      padding: 20px;
+      flex: 1;
+    }
+    .plant-content h2 {
+      margin-bottom: 10px;
+    }
+
+    .calendar-container {
+      margin-top: 20px;
+    }
+
+    .calendar-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    button.month-nav {
+      background: transparent;
+      border: none;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+
+    .calendar-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 6px;
+    }
+
+    .calendar-cell {
+      position: relative;
+      padding: 10px;
+      background: white;
+      border-radius: 8px;
+      text-align: center;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+    .calendar-cell:hover {
+      background: #f0f0f0;
+    }
+    .calendar-cell.done::after {
+      content: '✔';
+      position: absolute;
+      top: 6px;
+      right: 6px;
+      color: var(--accent);
+      font-size: 0.9rem;
+    }
+
+    .calendar-cell.other-month {
+      opacity: 0.3;
+    }
+  </style>
+</head>
 <body>
 
-    <section id="materiais" class="section">
-        <h2>Catálogo</h2>
+<div class="container">
+  <h1 class="title">Agenda de Regas da Planta</h1>
 
-        <!-- Ervas Aromáticas -->
-        <h3>Ervas aromáticas:</h3>
-        <div class="materiais-container">
-            <div class="material">
-                <a href="src/alecrim.html" class="material-link">
-                    <h3>Alecrim</h3>
-                    <img src="img/alecrim.jpeg" alt="Imagem de alecrim">
-                    <p>Uma erva perene e aromática, muito usada na culinária mediterrânea e com propriedades medicinais.
-                        É resistente e se adapta bem a climas secos.</p>
-                </a>
-            </div>
-            <div class="material">
-                <a href="src/manjericao.html" class="material-link">
-                    <h3>Manjericão</h3>
-                    <img src="img/magericão.webp" alt="Imagem de manjericão">
-                    <p>Erva anual muito apreciada na culinária, especialmente em pratos italianos. Possui um aroma
-                        delicioso e folhas verdes vibrantes.</p>
-                </a>
-            </div>
-        </div>
+  <div class="plant-card">
+    <img src="https://via.placeholder.com/180" alt="Planta" class="plant-img">
+    <div class="plant-content">
+      <h2>Minha Planta</h2>
+      <p>Use o calendário abaixo para marcar os dias que você regou sua planta.</p>
 
-        <!-- Flores Ornamentais -->
-        <h3>Flores ornamentais:</h3>
-        <div class="materiais-container">
-            <div class="material">
-                <a href="src/girassol.html" class="material-link">
-                    <h3>Girassol</h3>
-                    <img src="img/girassol.jpeg" alt="Imagem de girassol">
-                    <p>Conhecido por suas grandes e vibrantes flores amarelas que seguem o movimento do sol. É um
-                        símbolo de felicidade e vitalidade.</p>
-                </a>
-            </div>
-            <div class="material">
-                <a href="src/lavanda.html" class="material-link">
-                    <h3>Lavanda</h3>
-                    <img src="img/lavanda.jpeg" alt="Imagem de lavanda">
-                    <p>Uma flor perene com flores roxas perfumadas, muito usada em aromaterapia, cosméticos e como
-                        planta ornamental. Atrai polinizadores.</p>
-                </a>
-            </div>
-            <div class="material">
-                <a href="src/orquideia.html" class="material-link">
-                    <h3>Orquídea</h3>
-                    <img src="img/orquidea.jpeg" alt="Imagem de orquídea">
-                    <p>Conhecidas por suas flores duradouras e elegantes. Embora pareçam delicadas, são relativamente
-                        fáceis de cuidar se as condições ideais forem mantidas.</p>
-                </a>
-            </div>
-            <div class="material">
-                <a href="src/hibisco.html" class="material-link">
-                    <h3>Hibisco</h3>
-                    <img src="img/hibisco.jpeg" alt="Imagem de hibisco">
-                    <p>É um símbolo de beleza tropical e atrai beija-flores. Embora as flores individuais durem apenas
-                        um dia, a planta produz muitas ao longo da estação.</p>
-                </a>
-            </div>
-            <div class="material">
-                <a href="src/rosa.html" class="material-link">
-                    <h3>Rosa</h3>
-                    <img src="img/rosa.webp" alt="Imagem de rosa">
-                    <p>As rosas são talvez as flores mais populares e cultivadas no mundo, valorizadas por sua beleza,
-                        fragrância e variedade de cores e formas. Símbolo de amor e paixão, exigem alguns cuidados, mas
-                        recompensam com flores espetaculares.</p>
-                </a>
-            </div>
+      <div class="calendar-container">
+        <div class="calendar-header">
+          <button class="month-nav" id="prev-month">&lt;</button>
+          <span id="month-year"></span>
+          <button class="month-nav" id="next-month">&gt;</button>
         </div>
-        <h3>Cactos:</h3>
-        <div class="materiais-container">
-            <div class="material">
-                <a href="src/orelhadecoelho.html" class="material-link">
-                    <h3>Orelha-de-coelho</h3>
-                    <img src="img/orelhadecoelho.jpeg" alt="Imagem de cacto orelha-de-coelho">
-                    <p>Um cacto muito popular, conhecido por suas almofadas achatadas que se assemelham a orelhas de
-                        coelho. Não possui espinhos pontiagudos, mas sim gloquídios (pequenos pelos que podem irritar a
-                        pele). É ideal para quem busca um toque diferente e divertido.</p>
-                </a>
-            </div>
-            <div class="material">
-                <a href="src/echeveria.html" class="material-link">
-                    <h3>Echeveria</h3>
-                    <img src="img/Echeveria.webp" alt="Imagem de echeveria">
-                    <p>Uma suculenta popular conhecida por suas rosetas simétricas e cores variadas. São resistentes e
-                        de baixa manutenção, ótimas para iniciantes.</p>
-                </a>
-            </div>
-        </div>
-        <h3>Legumes:</h3>
-        <div class="materiais-container">
-        <div class="material">
-            <a href="src/alface.html" class="material-link">
-                <h3>Alface</h3>
-                <img src="img/alface.jpeg" alt="Imagem de alface">
-                <p>Uma folha verde popular e fácil de cultivar, essencial para saladas e diversos pratos. Existem
-                    muitas variedades de alface.</p>
-            </a>
-        </div>
-        <div class="material">
-            <a href="src/tomatecereja.html" class="material-link">
-                <h3>Tomate-cereja</h3>
-                <img src="img/tomate.webp" alt="Imagem de tomate cereja">
-                <p>Pequenos e doces tomates, perfeitos para saladas, petiscos e decoração. São produtivos e ideais
-                    para quem está começando.</p>
-            </a>
-        </div>
-        </div>
-        <a class="back-link" href="index.html">⬅ Voltar para página inicial</a>
-    </section>
+        <div class="calendar-grid" id="calendar"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const calendarEl = document.getElementById('calendar');
+  const monthYearEl = document.getElementById('month-year');
+  const prevBtn = document.getElementById('prev-month');
+  const nextBtn = document.getElementById('next-month');
+
+  let currentDate = new Date();
+  let markedDays = JSON.parse(localStorage.getItem('regs')) || {};
+
+  function save() {
+    localStorage.setItem('regs', JSON.stringify(markedDays));
+  }
+
+  function drawCalendar() {
+    calendarEl.innerHTML = '';
+    const year = currentDate.getFullYear();
+    const month = currentDate.getMonth();
+    monthYearEl.textContent = currentDate.toLocaleString('pt-BR', { month: 'long', year: 'numeric' });
+
+    const firstDay = new Date(year, month, 1).getDay(); // 0 = domingo
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+    const prevDays = firstDay === 0 ? 6 : firstDay - 1; // converter domingo em último
+    const totalCells = prevDays + daysInMonth;
+    const nextDays = (7 - (totalCells % 7)) % 7;
+
+    // dias do mês anterior
+    for (let i = prevDays; i > 0; i--) {
+      const d = new Date(year, month, 1 - i);
+      createCell(d, true);
+    }
+    // dias do mês atual
+    for (let d = 1; d <= daysInMonth; d++) {
+      createCell(new Date(year, month, d), false);
+    }
+    // dias do próximo mês
+    for (let d = 1; d <= nextDays; d++) {
+      createCell(new Date(year, month + 1, d), true);
+    }
+  }
+
+  function createCell(date, otherMonth) {
+    const y = date.getFullYear(), m = date.getMonth(), d = date.getDate();
+    const key = `${y}-${m+1}-${d}`;
+    const done = markedDays[key];
+
+    const el = document.createElement('div');
+    el.classList.add('calendar-cell');
+    if (otherMonth) el.classList.add('other-month');
+    if (!otherMonth && done) el.classList.add('done');
+
+    el.textContent = d;
+    el.addEventListener('click', () => {
+      if (otherMonth) return;
+      markedDays[key] = !markedDays[key];
+      el.classList.toggle('done');
+      save();
+    });
+    calendarEl.appendChild(el);
+  }
+
+  prevBtn.addEventListener('click', () => {
+    currentDate.setMonth(currentDate.getMonth() - 1);
+    drawCalendar();
+  });
+  nextBtn.addEventListener('click', () => {
+    currentDate.setMonth(currentDate.getMonth() + 1);
+    drawCalendar();
+  });
+
+  // inicializa
+  drawCalendar();
+</script>
 
 </body>
-
 </html>
