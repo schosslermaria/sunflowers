@@ -7,6 +7,8 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f8f9fa;
   color: #2e3d34;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: normal;
 }
 
 #titulo{
@@ -18,6 +20,8 @@ body {
   text-align: center;
   padding: 20px;
   color: #2f3d2f;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: normal;
 }
 
 .container {
@@ -32,6 +36,8 @@ body {
   padding: 20px;
   text-align: center;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: normal;
 }
 
 .resumo .temperatura {
@@ -42,6 +48,8 @@ body {
 .resumo .descricao {
   font-size: 1.5em;
   margin: 5px 0;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: normal;
 }
 
 .detalhes {

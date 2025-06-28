@@ -107,6 +107,8 @@ body{
 .material p {
     color: #555;
     line-height: 1.6;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: normal;
 }
 
 @media (max-width: 768px) {
