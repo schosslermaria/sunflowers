@@ -11,26 +11,7 @@ body {
   overflow-x: hidden;
 }
 
-/* RESPONSIVIDADE */
-@media (max-width: 1000px) {
-  .manos {
-    width: 90vw;
-    height: auto;
-    margin: 4vh auto;
-    float: none;
-    flex-direction: column;
-    align-items: center;
-    background-color: #ccecd2;
-    padding: 2vh 0;
-  }
 
-  .esqm,
-  .dirm {
-    width: 80vw;
-    height: auto;
-    margin: 1.5vh 0;
-  }
-}
 
 /* HEADER */
 .header {
@@ -279,4 +260,78 @@ height: 31vh;
   position: absolute;
   z-index: 10; /* Garante que fique acima da moldura/imagem */
   cursor: pointer;
+}
+@media (max-width: 768px) {
+  #logo {
+    max-width: 60vw;
+  }
+
+  .navbar a {
+    font-size: 3vw;
+    padding: 1vh 4vw;
+  }
+
+  .manos {
+    width: 90vw;
+    height: auto;
+    float: none;
+    margin: 3vh auto;
+    flex-direction: column;
+  }
+
+  .esqm,
+  .dirm {
+    width: 80vw;
+    height: 35vh;
+    margin: 2vh 0;
+    position: relative;
+  }
+
+  .esqm img,
+  .dirm img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .texto {
+    font-size: 4vw;
+    width: 80%;
+  }
+
+  #sobre-nos {
+    max-width: 90vw;
+    height: auto;
+    padding: 3vh 4vw;
+  }
+
+  #sobre-nos h2,
+  #contato h2 {
+    font-size: 6vw;
+  }
+
+  #sobre-nos p,
+  #contato p {
+    font-size: 4vw;
+  }
+
+  #joaomaria {
+    width: 60vw;
+    height: 30vh;
+    object-fit: cover;
+    display: block;
+    margin: 2vh auto;
+    border-radius: 10px;
+  }
+
+  .section.contato {
+    max-width: 90vw;
+    padding: 3vh 4vw;
+  }
+
+  .footer-text {
+    font-size: 3vw;
+    padding: 1vh 4vw;
+    border-radius: 2vw;
+  }
 }

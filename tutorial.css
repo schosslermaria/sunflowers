@@ -1,0 +1,98 @@
+/* jardinagem.css */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f0f8f4;
+  color: #2f4237;
+}
+
+.header {
+  background-color: #7fbd91;
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+}
+
+.dicas-texto {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  margin-bottom: 30px;
+}
+
+.dicas-texto ul {
+  padding-left: 20px;
+}
+
+.videos h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.video-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.video {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 10px;
+  width: 300px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+.video p {
+  margin-top: 10px;
+  font-size: 0.95em;
+}
+
+.links {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.links a {
+  background-color: #7fbd91;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.links a:hover {
+  background-color: #659f79;
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #d8f1e2;
+  font-size: 0.9em;
+  color: #3f5246;
+  margin-top: 50px;
+}
+
+@media (max-width: 768px) {
+  .video-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+  .video {
+    width: 90%;
+  }
+}
