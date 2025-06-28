@@ -58,24 +58,24 @@ body {
 }
 
 .links {
-  margin-top: 40px;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
 .links a {
-  background-color: #7fbd91;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 6px;
-  text-decoration: none;
-  transition: background 0.3s;
+    background-color: #79bfa1;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background 0.3s;
 }
 
 .links a:hover {
-  background-color: #659f79;
+    background-color: #64a68c;
 }
 
 .footer {
