@@ -1,13 +1,15 @@
 /* Importações de fontes e animações */
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=DynaPuff:wght@400..700&family=Satisfy&display=swap');
 @import 'animate.css';
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Dancing+Script:wght@400..700&family=Sevillana&display=swap');
 
 /* RESET E ESTILIZAÇÕES GLOBAIS */
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
   color: #333;
-  background: #fee0a2;
+  background: #f8f9fa;
   overflow-x: hidden;
 }
 
@@ -17,7 +19,7 @@ body {
 .header {
   padding: 3vh 0;
   text-align: center;
-  background-color: #F5EDDC;
+  background-color: #e6edd9;
 }
 
 #logo {
@@ -58,7 +60,7 @@ body {
 .manos {
   width: 45vw;
   height: 70vh;
-  background-color: #DBCF9E;
+  background-color: #e6edd9;
   float: left;
   margin: 8vh 2vw 0 2vw;
   border-radius: 3vw;
@@ -80,7 +82,7 @@ body {
   color: #3e2723;
   display: flex;
   align-items: center;
-    overflow: hidden;
+  overflow: hidden;
 
   justify-content: center;
   text-align: center;
@@ -101,13 +103,12 @@ body {
   max-width: 50vw;
   border-radius: 1vw;
   height: 90vh;
-  box-shadow: 0 1vh 2vh rgba(0, 0, 0, 0.08);
   font-weight: bold;
 }
 
 #sobre-nos h2 {
   color: #2c572c;
-  font-family: 'Raleway', sans-serif;
+  font-family: Satisfy, sans-serif;
   text-align: center;
   margin-bottom: 2vh;
   font-size: 2.5vw;
@@ -118,6 +119,7 @@ body {
   line-height: 1.7;
   color: #444;
   font-size: 1.2vw;
+  font-family: DynaPuff, sans-serif;
 }
 
 #joaomaria {
@@ -198,7 +200,7 @@ footer {
 #check {
   background-color: #ffffff;
   color: #346634;
-  position: absolute;  
+  position: absolute;
   left: 2.9vw;
   width: 20.4vw;
   height: 31vh;
@@ -218,8 +220,10 @@ height: 31vh;
 }*/
 
 /* Moldura ativa no modo de texto */
-.esqm.moldura-ativa, .dirm.moldura-ativa {
-  background-image: url('/img/moldura.jpg'); /* Caminho da imagem da moldura */
+.esqm.moldura-ativa,
+.dirm.moldura-ativa {
+  background-image: url('/img/moldura.jpg');
+  /* Caminho da imagem da moldura */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -239,11 +243,14 @@ height: 31vh;
   z-index: 2;
   width: 55%;
 }
+
 #check {
   position: absolute;
-  z-index: 10; /* Garante que fique acima da moldura/imagem */
+  z-index: 10;
+  /* Garante que fique acima da moldura/imagem */
   cursor: pointer;
 }
+
 @media (max-width: 768px) {
   #logo {
     max-width: 60vw;
@@ -277,72 +284,167 @@ height: 31vh;
     object-fit: cover;
   }
 
-  
-    .texto {
-  font-size: 1rem;
+
+  .texto {
+    font-size: 1rem;
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: normal;
+  }
+
 }
-   
-  }
 
-  #sobre-nos {
-    max-width: 90vw;
-    height: auto;
-    padding: 3vh 4vw;
-  }
+#sobre-nos {
+  max-width: 90vw;
+  height: auto;
+  padding: 3vh 4vw;
+}
 
-  #sobre-nos h2,
-  #contato h2 {
-    font-size: 6vw;
-  }
+#sobre-nos h2,
+#contato h2 {
+  font-size: 6vw;
+}
 
-  #sobre-nos p,
-  #contato p {
-    font-size: 4vw;
-  }
+#sobre-nos p,
+#contato p {
+  font-size: 4vw;
+}
 
-  #joaomaria {
-    width: 60vw;
-    height: 30vh;
-    object-fit: cover;
-    display: block;
-    margin: 2vh auto;
-    border-radius: 10px;
-  }
+#joaomaria {
+  width: 60vw;
+  height: 30vh;
+  object-fit: cover;
+  display: block;
+  margin: 2vh auto;
+  border-radius: 10px;
+}
 
-  .section.contato {
-    max-width: 90vw;
-    padding: 3vh 4vw;
-  }
+.section.contato {
+  max-width: 90vw;
+  padding: 3vh 4vw;
+}
 
-  .footer-text {
-    font-size: 3vw;
-    padding: 1vh 4vw;
-    border-radius: 2vw;
-  }
+.footer-text {
+  font-size: 3vw;
+  padding: 1vh 4vw;
+  border-radius: 2vw;
+}
 
 
-  #g {   width: 100%;
-  height: 100%;}
-
-#cl{  width: 100%;
+#g {
+  width: 100%;
   height: 100%;
 }
 
-#t{  width: 100%;  height: 100%;
+#cl {
+  width: 100%;
+  height: 100%;
 }
 
-#n{ width: 100%;  height: 100%;
- }
-
-#c{   width: 100%;  height: 100%;
+#t {
+  width: 100%;
+  height: 100%;
 }
 
-#p{ 
-  width: 100%; height: 100%;
+#n {
+  width: 100%;
+  height: 100%;
 }
 
-#pl{  width: 100%; height: 100%;
+#c {
+  width: 100%;
+  height: 100%;
 }
 
-#r{  width: 100%;  height: 100%;
+#p {
+  width: 100%;
+  height: 100%;
+}
+
+#pl {
+  width: 100%;
+  height: 100%;
+}
+
+#r {
+  width: 100%;
+  height: 100%;
+}
+
+#container2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 100px 50px;
+  margin-top: 80px;
+}
+
+
+#container2 .card {
+  position: relative;
+  width: 350px;
+  height: 300px;
+  border-radius: 20px;
+  box-shadow: 0 35px 80px rgba(0, 0, 0, .15);
+  background: #f9f9f9;
+  transition: .5s;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+
+#container2 .card .caixaimg {
+  position: absolute;
+  top: 20px;
+  width: 300px;
+  height: 220px;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: .5s;
+}
+
+#container2 .card .caixaimg img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#container2 .card .conteudo {
+  position: absolute;
+  top: 250px;
+  width: 100%;
+  height: 65px;
+  padding: 0 30px;
+  overflow: hidden;
+  text-align: center;
+  margin-top: -20px;
+}
+
+#container2 .card:hover .caixaimg {
+  top: -100px;
+  scale: .75;
+  box-shadow: 0 15px 45px rgba (0, 0, 0.2);
+}
+
+#container2 .card:hover .conteudo {
+  top: 150px;
+  height: 350px;
+}
+
+#container2 .card .conteudo h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 3rem;
+  color: #817b34;
+  font-family: Satisfy, sans-serif;
+}
+
+#container2 .card .conteudo p {
+  color: #333;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 20px;
 }
