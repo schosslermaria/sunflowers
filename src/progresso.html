@@ -1,100 +1,219 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Progresso das Plantas</title>
-  <link rel="stylesheet" href="/css/progresso.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Calendário de Regas</title>
+  <style>
+    /* --- Reset básico e variáveis --- */
+    :root {
+      --bg-base: #fef9ef;
+      --bg-card: #f1e1b4;
+      --text-base: #2e261b;
+      --accent: #4caf50;
+      --dot-bg: #dcd2ad;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--bg-base);
+      color: var(--text-base);
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 30px;
+      font-weight: bold;
+    }
+
+    .plant-card {
+      background: var(--bg-card);
+      border-radius: 14px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+      overflow: hidden;
+      margin-bottom: 30px;
+      transition: transform 0.2s ease;
+      display: flex;
+      align-items: center;
+    }
+    .plant-card:hover {
+      transform: scale(1.01);
+    }
+
+    .plant-img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .plant-content {
+      padding: 20px;
+      flex: 1;
+    }
+    .plant-content h2 {
+      margin-bottom: 10px;
+    }
+
+    .calendar-container {
+      margin-top: 20px;
+    }
+
+    .calendar-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    button.month-nav {
+      background: transparent;
+      border: none;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+
+    .calendar-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 6px;
+    }
+
+    .calendar-cell {
+      position: relative;
+      padding: 10px;
+      background: white;
+      border-radius: 8px;
+      text-align: center;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+    .calendar-cell:hover {
+      background: #f0f0f0;
+    }
+    .calendar-cell.done::after {
+      content: '✔';
+      position: absolute;
+      top: 6px;
+      right: 6px;
+      color: var(--accent);
+      font-size: 0.9rem;
+    }
+
+    .calendar-cell.other-month {
+      opacity: 0.3;
+    }
+  </style>
 </head>
 <body>
-  <main class="container">
-    <h1 class="title">Veja a lista das plantas que precisam ser regadas hoje.</h1>
 
-    <section class="plant-card" data-id="samambaia">
-      <img src="/img/samabaia.png" alt="Samambaia" class="plant-img" />
-      <div class="plant-content">
-        <h2>Samambaia</h2>
-        <label>
-          <input type="checkbox" class="checkbox-regar" /> Regada hoje
-        </label>
-        <div class="calendar">
-          <span>D</span><span>S</span><span>T</span><span>Q</span><span>Q</span><span>S</span><span>S</span>
-          <div class="calendar-dots"></div>
-        </div>
-        <div class="progress-bar">
-          <div class="progress" style="width: 0%"></div>
-        </div>
-        <p><strong>Dias para crescer:</strong> <span class="dias">5</span></p>
-      </div>
-    </section>
+<div class="container">
+  <h1 class="title">Agenda de Regas da Planta</h1>
 
-    <section class="plant-card" data-id="espada">
-      <img src="/img/espadadesaojorge.jpg" alt="Espada-de-São-Jorge" class="plant-img" />
-      <div class="plant-content">
-        <h2>Espada-de-São-Jorge</h2>
-        <label>
-          <input type="checkbox" class="checkbox-regar" /> Regada hoje
-        </label>
-        <div class="calendar">
-          <span>D</span><span>S</span><span>T</span><span>Q</span><span>Q</span><span>S</span><span>S</span>
-          <div class="calendar-dots"></div>
+  <div class="plant-card">
+    <img src="https://via.placeholder.com/180" alt="Planta" class="plant-img">
+    <div class="plant-content">
+      <h2>Minha Planta</h2>
+      <p>Use o calendário abaixo para marcar os dias que você regou sua planta.</p>
+
+      <div class="calendar-container">
+        <div class="calendar-header">
+          <button class="month-nav" id="prev-month">&lt;</button>
+          <span id="month-year"></span>
+          <button class="month-nav" id="next-month">&gt;</button>
         </div>
-        <div class="progress-bar">
-          <div class="progress" style="width: 0%"></div>
-        </div>
-        <p><strong>Dias para crescer:</strong> <span class="dias">3</span></p>
+        <div class="calendar-grid" id="calendar"></div>
       </div>
-    </section>
-  </main>
+    </div>
+  </div>
+</div>
+
 <script>
-document.querySelectorAll('.plant-card').forEach(card => {
-  const id = card.dataset.id;
-  const checkbox = card.querySelector('.checkbox-regar');
-  const progressBar = card.querySelector('.progress');
-  const diasElem = card.querySelector('.dias');
+  const calendarEl = document.getElementById('calendar');
+  const monthYearEl = document.getElementById('month-year');
+  const prevBtn = document.getElementById('prev-month');
+  const nextBtn = document.getElementById('next-month');
 
-  const today = new Date().getDay(); // 0 = domingo, ..., 6 = sábado
+  let currentDate = new Date();
+  let markedDays = JSON.parse(localStorage.getItem('regs')) || {};
 
-  // Criar bolinhas do calendário
-  const dotContainer = document.createElement('div');
-  dotContainer.classList.add('calendar-dots');
-  for (let i = 0; i < 7; i++) {
-    const dot = document.createElement('span');
-    dotContainer.appendChild(dot);
+  function save() {
+    localStorage.setItem('regs', JSON.stringify(markedDays));
   }
-  card.querySelector('.calendar').appendChild(dotContainer);
 
-  // Carregar progresso do localStorage
-  let data = JSON.parse(localStorage.getItem(id)) || {
-    dias: parseInt(diasElem.textContent),
-    regas: []
-  };
+  function drawCalendar() {
+    calendarEl.innerHTML = '';
+    const year = currentDate.getFullYear();
+    const month = currentDate.getMonth();
+    monthYearEl.textContent = currentDate.toLocaleString('pt-BR', { month: 'long', year: 'numeric' });
 
-  // Atualiza interface com dados salvos
-  updateUI();
+    const firstDay = new Date(year, month, 1).getDay(); // 0 = domingo
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
 
-  checkbox.addEventListener('change', () => {
-    if (checkbox.checked && !data.regas.includes(today)) {
-      data.regas.push(today);
-      if (data.dias > 0) data.dias -= 1;
-      localStorage.setItem(id, JSON.stringify(data));
-      updateUI();
+    const prevDays = firstDay === 0 ? 6 : firstDay - 1; // converter domingo em último
+    const totalCells = prevDays + daysInMonth;
+    const nextDays = (7 - (totalCells % 7)) % 7;
+
+    // dias do mês anterior
+    for (let i = prevDays; i > 0; i--) {
+      const d = new Date(year, month, 1 - i);
+      createCell(d, true);
     }
-    checkbox.checked = false; // Desmarca após salvar
+    // dias do mês atual
+    for (let d = 1; d <= daysInMonth; d++) {
+      createCell(new Date(year, month, d), false);
+    }
+    // dias do próximo mês
+    for (let d = 1; d <= nextDays; d++) {
+      createCell(new Date(year, month + 1, d), true);
+    }
+  }
+
+  function createCell(date, otherMonth) {
+    const y = date.getFullYear(), m = date.getMonth(), d = date.getDate();
+    const key = `${y}-${m+1}-${d}`;
+    const done = markedDays[key];
+
+    const el = document.createElement('div');
+    el.classList.add('calendar-cell');
+    if (otherMonth) el.classList.add('other-month');
+    if (!otherMonth && done) el.classList.add('done');
+
+    el.textContent = d;
+    el.addEventListener('click', () => {
+      if (otherMonth) return;
+      markedDays[key] = !markedDays[key];
+      el.classList.toggle('done');
+      save();
+    });
+    calendarEl.appendChild(el);
+  }
+
+  prevBtn.addEventListener('click', () => {
+    currentDate.setMonth(currentDate.getMonth() - 1);
+    drawCalendar();
+  });
+  nextBtn.addEventListener('click', () => {
+    currentDate.setMonth(currentDate.getMonth() + 1);
+    drawCalendar();
   });
 
-  function updateUI() {
-    diasElem.textContent = data.dias;
-    const dots = card.querySelectorAll('.calendar-dots span');
-    dots.forEach((dot, i) => {
-      dot.classList.toggle('done', data.regas.includes(i));
-    });
-    const progresso = Math.round(((7 - data.dias) / 7) * 100);
-    progressBar.style.width = `${progresso}%`;
-  }
-});
+  // inicializa
+  drawCalendar();
 </script>
 
-  <script src="script.js"></script>
 </body>
 </html>
