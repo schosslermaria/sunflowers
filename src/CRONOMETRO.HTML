@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cronômetro de Crescimento</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Satisfy&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=DynaPuff:wght@400..700&family=Satisfy&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Dancing+Script:wght@400..700&family=Sevillana&display=swap');
+
+        :root {
+            --primaria: #79bfa1;
+            --secundaria: #a8dbb9;
+            --fundo: #f8f9fa;
+            --texto: #2E2E2E;
+            --foco: #6e9281;
+            --borda: #D0D0C0;
+        }
+
+        body {
+            background: var(--fundo);
+            font-family: "Barlow Condensed", sans-serif;
+            font-weight: normal;
+            margin: 0;
+            padding: 20px;
+        }
+
+        #titulo {
+            font-weight: normal;
+            font-family: Satisfy, sans-serif;
+        }
+
+        .container {
+            max-width: 480px;
+            margin: auto;
+            background: #e6edd9;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+            padding: 24px;
+        }
+
+        h2 {
+            color: var(--primaria);
+            font-size: 1.4rem;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+
+        label {
+            font-weight: 500;
+            display: block;
+            margin-bottom: 6px;
+            font-family: "Barlow Condensed", sans-serif;
+            font-weight: normal;
+        }
+
+        select,
+        input[type="date"],
+        button {
+            width: 100%;
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid var(--borda);
+            border-radius: 6px;
+            margin-bottom: 18px;
+            font-family: "Barlow Condensed", sans-serif;
+            font-weight: normal;
+        }
+
+        button {
+            background: var(--primaria);
+            color: white;
+            border: none;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+
+        button:hover {
+            background: var(--foco);
+        }
+
+        .resultado {
+            background: var(--secundaria);
+            padding: 16px;
+            border-radius: 8px;
+        }
+
+        .resultado p {
+            margin: 6px 0;
+        }
+
+        .etapas {
+            margin-top: 12px;
+        }
+
+        .etapa {
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .etapa span.status {
+            font-weight: bold;
+            color: var(--texto);
+            font-family: "Barlow Condensed", sans-serif;
+            font-weight: normal;
+        }
+
+        #formulario {
+            margin-top: 24px;
+        }
+
+        .etapa {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .icone-etapa {
+            width: 30px;
+            height: 30px;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+
+         .icone-boboleta {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2 id="titulo"> <img src="/img/borboletinha copy.gif" alt="Germinação" class="icone-boboleta" />Veja o progesso de suas plantas:</h2>
+        <label for="planta">Planta registrada:</label>
+        <select id="planta">
+            <option value="">Selecione aqui</option>
+            <option value="Manjericão"> 🌿 Manjericão</option>
+            <option value="Tomateiro"> 🍅 Tomate</option>
+            <option value="Lírio-da-paz"> 🌸 Lírio-da-paz</option>
+            <option value="Alecrim"> 🌾 Alecrim</option>
+        </select>
+        <button onclick="continuarParaData()">Continuar</button>
+
+        <div id="formulario" style="display:none;">
+            <h2 id="tituloPlanta"></h2>
+            <label for="plantio">Data de Plantio:</label>
+            <input type="date" id="plantio" />
+            <button onclick="atualizarCronometro()">Atualizar cronômetro</button>
+
+            <div id="resultado" class="resultado" style="display:none;">
+                <p>🌿 Dias desde o plantio: <strong><span id="dias">0</span></strong></p>
+
+                <p> <img src="/img/semana.png" alt="Germinação" class="icone-etapa" /> Fase atual: <strong><span
+                            id="faseAtual">-</span></strong></p>
+                <div class="etapas">
+                    <div class="etapa">
+                        <img src="/img/semente.png" alt="Germinação" class="icone-etapa" />
+                        <span class="status" id="estagio1">Germinação</span>: 0–7 dias
+                    </div>
+                    <div class="etapa">
+                        <img src="/img/mudas.png" alt="Muda jovem" class="icone-etapa" />
+                        <span class="status" id="estagio2">Muda jovem</span>: 8–30 dias
+                    </div>
+                    <div class="etapa">
+                        <img src="/img/plantar (1).png" alt="Crescimento vegetativo" class="icone-etapa" />
+                        <span class="status" id="estagio3">Crescimento vegetativo</span>: 31–90 dias
+                    </div>
+                    <div class="etapa">
+                        <img src="/img/floracao.png" alt="Floração/frutificação" class="icone-etapa" />
+                        <span class="status" id="estagio4">Floração/frutificação</span>: 91+ dias
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function continuarParaData() {
+            const planta = document.getElementById('planta').value;
+            if (!planta) {
+                alert('Selecione uma planta para continuar.');
+                return;
+            }
+            document.getElementById('tituloPlanta').textContent = `Cronômetro para ${planta}`;
+            document.getElementById('formulario').style.display = 'block';
+        }
+
+        function atualizarCronometro() {
+            const plantio = document.getElementById('plantio').value;
+            if (!plantio) {
+                alert('Por favor, selecione a data de plantio.');
+                return;
+            }
+
+            const dataPlantio = new Date(plantio);
+            const hoje = new Date();
+            const diffMs = hoje - dataPlantio;
+            const dias = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+
+            document.getElementById('dias').textContent = dias;
+            document.getElementById('resultado').style.display = 'block';
+
+            const [e1, e2, e3, e4] = [
+                document.getElementById('estagio1'),
+                document.getElementById('estagio2'),
+                document.getElementById('estagio3'),
+                document.getElementById('estagio4')
+            ];
+            [e1, e2, e3, e4].forEach(el => el.style.fontWeight = 'normal');
+
+            let fase = '';
+            if (dias <= 7) {
+                e1.style.fontWeight = 'bold';
+                fase = 'Germinação';
+            } else if (dias <= 30) {
+                e2.style.fontWeight = 'bold';
+                fase = 'Muda jovem';
+            } else if (dias <= 90) {
+                e3.style.fontWeight = 'bold';
+                fase = 'Crescimento vegetativo';
+            } else {
+                e4.style.fontWeight = 'bold';
+                fase = 'Floração/frutificação';
+            }
+
+            document.getElementById('faseAtual').textContent = fase;
+        }
+    </script>
+</body>
+
+</html>
