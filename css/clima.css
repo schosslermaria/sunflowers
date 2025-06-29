@@ -128,3 +128,9 @@ body {
   font-size: 0.9em;
   color: #4e5e54;
 }
+.icone-boboleta {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  flex-shrink: 0;
+}

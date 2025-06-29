@@ -162,3 +162,16 @@ h3 {
 .links a:hover {
     background-color: #64a68c;
 }
+.icone-boboleta {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.icone-dog {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
