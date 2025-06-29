@@ -7,8 +7,8 @@
   <title>Regar hoje</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Satisfy&display=swap');
- @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=DynaPuff:wght@400..700&family=Satisfy&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Dancing+Script:wght@400..700&family=Sevillana&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=DynaPuff:wght@400..700&family=Satisfy&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Dancing+Script:wght@400..700&family=Sevillana&display=swap');
 
     :root {
       --cor-destaque: #d1e7dd;
@@ -41,19 +41,19 @@
       justify-content: space-between;
       align-items: center;
       margin-bottom: 2rem;
-      
+
     }
 
     header h1 {
       font-size: 1.8rem;
-        font-weight: normal;
+      font-weight: normal;
       font-family: Satisfy, sans-serif;
     }
 
     .usuario-info {
       font-size: 1rem;
       color: #555;
-      
+
     }
 
     .planta-lista {
@@ -61,7 +61,7 @@
       grid-template-columns: repeat(3, 1fr);
       gap: 1.5rem;
       margin-bottom: 3rem;
-      
+
     }
 
     .planta-link {
@@ -70,20 +70,54 @@
     }
 
     .planta-linha {
-      background-color: var(--cor-destaque);
-      border-radius: 8px;
-      padding: 1rem;
+      position: relative;
+      background: #fefefe;
+      border: none;
+      border-radius: 16px;
+      padding: 2.5rem 1rem 2rem;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
-      transition: background-color 0.2s ease;
+      justify-content: space-between;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.03);
+      background-image: url('/img/moldurablocos.png');
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      transition: transform 0.3s ease;
+      text-align: center;
     }
 
     .planta-linha:hover {
-      background-color: #c5dfd3;
+      transform: scale(1.03);
+      cursor: pointer;
     }
+
+    .planta-nome {
+      font-size: 1.1rem;
+      margin-top: 0.5rem;
+      color: #2f3d2f;
+      font-family: "Satisfy", cursive;
+    }
+
+    .planta-imagem {
+      width: 80px;
+      height: 80px;
+      border-radius: 12px;
+      object-fit: cover;
+      margin-bottom: 0.3rem;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    }
+
+    .planta-desc {
+      font-size: 0.8rem;
+      margin-top: 0.3rem;
+      color: #6b8066;
+      font-style: italic;
+      letter-spacing: 0.3px;
+      font-family: "Barlow Condensed", sans-serif;
+    }
+
 
     .planta-imagem {
       width: 90px;
@@ -97,8 +131,8 @@
       font-size: 1rem;
       color: #1c1c1c;
       text-align: center;
-       font-family: "Barlow Condensed", sans-serif;
-    font-weight: normal;
+      font-family: "Barlow Condensed", sans-serif;
+      font-weight: normal;
     }
 
     .botao-voltar {
@@ -137,11 +171,7 @@
 <body>
 
   <header>
-    <h1>Acesse o calendário para acompanhar bla bla bla</h1>
-    <div class="usuario-info">
-      👤 João Plantador<br>
-      🌎 Zona: Tropical
-    </div>
+    <h1>Clique em uma planta para registrar o dia de rega</h1>
   </header>
 
   <section class="planta-lista">
@@ -149,66 +179,77 @@
       <div class="planta-linha">
         <img class="planta-imagem" src="/img/alecrim.jpeg" alt="Alecrim">
         <strong class="planta-nome">Alecrim</strong>
+        <span class="planta-desc">clique aqui!</span>
       </div>
     </a>
     <a class="planta-link" href="/src/alfaceC.html">
       <div class="planta-linha">
         <img class="planta-imagem" src="/img/alface.jpeg" alt="Alface">
         <strong class="planta-nome">Alface</strong>
+        <span class="planta-desc">clique aqui!</span>
       </div>
     </a>
     <a class="planta-link" href="/src/echeveriaC.html">
       <div class="planta-linha">
         <img class="planta-imagem" src="/img/Echeveria.webp" alt="Echeveria">
         <strong class="planta-nome">Echeveria</strong>
+        <span class="planta-desc">clique aqui!</span>
       </div>
     </a>
     <a class="planta-link" href="/src/girassolC.html">
       <div class="planta-linha">
         <img class="planta-imagem" src="/img/girassol.jpeg" alt="Girassol">
         <strong class="planta-nome">Girassol</strong>
+        <span class="planta-desc">clique aqui!</span>
       </div>
     </a>
     <a class="planta-link" href="/src/hibiscoC.html">
       <div class="planta-linha">
         <img class="planta-imagem" src="/img/hibisco.jpeg" alt="Hibisco">
         <strong class="planta-nome">Hibisco</strong>
+        <span class="planta-desc">clique aqui!</span>
       </div>
     </a>
     <a class="planta-link" href="/src/lavandaC.html">
       <div class="planta-linha">
         <img class="planta-imagem" src="/img/lavanda.jpeg" alt="Lavanda">
         <strong class="planta-nome">Lavanda</strong>
+        <span class="planta-desc">clique aqui!</span>
       </div>
     </a>
     <a class="planta-link" href="/src/manjericaoC.html">
       <div class="planta-linha">
         <img class="planta-imagem" src="/img/magericão.webp" alt="Manjericão">
         <strong class="planta-nome">Manjericão</strong>
+        <span class="planta-desc">clique aqui!</span>
       </div>
     </a>
     <a class="planta-link" href="/src/orelhadecoelho.html">
       <div class="planta-linha">
         <img class="planta-imagem" src="/img/orelhadecoelho.jpeg" alt="Orelha de Coelho">
         <strong class="planta-nome">Orelha de Coelho</strong>
+        <span class="planta-desc">clique aqui!</span>
       </div>
     </a>
     <a class="planta-link" href="/src/orquideia.html">
       <div class="planta-linha">
         <img class="planta-imagem" src="/img/orquidea.jpeg" alt="Orquídea">
         <strong class="planta-nome">Orquídea</strong>
+        <span class="planta-desc">clique aqui!</span>
       </div>
     </a>
     <a class="planta-link" href="/src/rosa.html">
       <div class="planta-linha">
         <img class="planta-imagem" src="/img/rosa.webp" alt="Rosa">
         <strong class="planta-nome">Rosa</strong>
+        <span class="planta-desc">clique aqui!</span>
       </div>
     </a>
     <a class="planta-link" href="/src/tomatecereja.html">
       <div class="planta-linha">
         <img class="planta-imagem" src="/img/tomate.webp" alt="Tomate Cereja">
         <strong class="planta-nome">Tomate Cereja</strong>
+        <span class="planta-desc">clique aqui!</span>
       </div>
     </a>
   </section>
@@ -216,4 +257,5 @@
   <a href="/index.html" class="botao-voltar">⬅ Voltar para o Início</a>
 
 </body>
+
 </html>
