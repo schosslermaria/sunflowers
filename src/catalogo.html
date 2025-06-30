@@ -9,9 +9,18 @@
 </head>
 
 <body>
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Buscar planta...">
+        <button onclick="searchPlant()" class="search-button">
+            <img src="/img/lupa.png" alt="Lupa" class="lupa-icon">
+        </button>
+    </div>
+    </div>
+
 
     <section id="materiais" class="section">
-        <h2> <img src="/img/arvore.gif" alt="Germinação" class="icone-boboleta" />Catálogo <img src="/img/duas flores.gif" alt="Germinação" class="icone-boboleta" /></h2>
+        <h2> <img src="/img/arvore.gif" alt="Germinação" class="icone-boboleta" />Catálogo <img
+                src="/img/duas flores.gif" alt="Germinação" class="icone-boboleta" /></h2>
 
         <!-- Ervas Aromáticas -->
         <h3>Ervas aromáticas: </h3>
@@ -179,8 +188,8 @@
                 </a>
             </div>
         </div>
-        <h3>Plantas seguras para pets: <img src="/img/dog.gif" alt="Germinação" class="icone-dog"/></h3>
-         
+        <h3>Plantas seguras para pets: <img src="/img/dog.gif" alt="Germinação" class="icone-dog" /></h3>
+
         <div class="materiais-container">
             <div class="material">
                 <a href="/src/cataleia.html" class="material-link">
@@ -224,9 +233,30 @@
             </div>
         </div>
         <section class="links">
-            <a class="back-link" href="/index.html">⬅ Voltar para página inicial</a>
+            <a class="back-link" href="/paginicial.html">⬅ Voltar para página inicial</a>
         </section>
     </section>
+    <script>
+        function searchPlant() {
+            const input = document.getElementById("searchInput").value.toLowerCase();
+            const materials = document.querySelectorAll(".material");
+
+            for (let material of materials) {
+                const title = material.querySelector("h3").textContent.toLowerCase();
+                if (title.includes(input)) {
+                    material.scrollIntoView({ behavior: 'smooth' });
+                    material.style.border = "3px solid #49c453";
+                    setTimeout(() => {
+                        material.style.border = "2px solid #164b05";
+                    }, 2000);
+                    return;
+                }
+            }
+
+            alert("Planta não encontrada.");
+        }
+    </script>
+
 
 </body>
 

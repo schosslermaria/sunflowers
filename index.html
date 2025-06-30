@@ -4,142 +4,264 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Plantae Wiki</title>
-  <link rel="stylesheet" href="/css/style.css" />
-  <link rel="shortcut icon" href="img/Designer-removebg-preview.png" type="image/x-icon" />
+  <title>Entrar ou Cadastrar</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Barlow Condensed', sans-serif;
+      background-color: #f8f9fa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .form-container {
+      background-color: #fff;
+      border: 3px solid #7f9e7f;
+      border-radius: 15px;
+      padding: 30px 40px;
+      width: 100%;
+      max-width: 440px;
+      text-align: center;
+    }
+
+    .form-container img.logo {
+      width: 200px;
+      height: 200px;
+      object-fit: contain;
+      margin-bottom: 15px;
+    }
+
+    .form-container h2 {
+      color: #2f3d2f;
+      margin-bottom: 20px;
+    }
+
+    .input-group {
+      display: flex;
+      align-items: center;
+      background-color: #dce8d0;
+      border: 2px solid #7f9e7f;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      padding: 8px 12px;
+    }
+
+    .input-group img {
+      width: 24px;
+      height: 24px;
+      margin-right: 10px;
+    }
+
+    .input-group input {
+      border: none;
+      background: transparent;
+      outline: none;
+      flex: 1;
+      font-size: 16px;
+      color: #3d312f;
+    }
+
+    .form-button {
+      background-color: #99d499;
+      color: rgb(17, 7, 7);
+      border: none;
+      padding: 12px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 100%;
+      margin-top: 10px;
+      transition: background-color 0.3s;
+    }
+
+    .form-button:hover {
+      background-color: #aadfaa;
+    }
+
+    .toggle-form {
+      margin-top: 15px;
+      font-size: 15px;
+    }
+
+    .toggle-form button {
+      background: none;
+      border: none;
+      color: #4b664b;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 15px;
+    }
+
+    .message {
+      margin-top: 12px;
+      font-size: 14px;
+      color: #c04739;
+    }
+  </style>
 </head>
 
 <body>
-  <header class="header">
-    <img id="logo" src="img/logo.png" width="300px" alt="logo" />
-     <section class="links">
-        <a href="/src/CRONOMETRO.HTML" class="botao-voltar">Clique aqui para ver o progresso de suas plantas!</a> <img src="/img/folhaszinhas.gif" alt="Germinação" class="icone-boboleta" />
-     </section>
-  </header>
+  <div class="form-container">
+    <img src="/img/logo.png" alt="Logo" class="logo">
 
-  <main>
-    <section id="esquerda" class="manos">
-      <label for="check"
-        style="position: absolute; top: 27.6vh; left: 2.9vw; width: 20.4vw; height: 31vh; z-index: 10; cursor: pointer;">
-        <input id="check" type="checkbox" style="opacity: 0; width: 100%; height: 100%;" />
-      </label>
+    <!-- LOGIN FORM -->
+    <form id="loginForm">
+      <h2>Seja bem-vindo!</h2>
+      <div class="input-group">
+        <img src="/img/o-email.png" alt="Email">
+        <input type="email" id="loginEmail" placeholder="E-mail" required />
+      </div>
+      <div class="input-group">
+        <img src="/img/senha.png" alt="Senha">
+        <input type="password" id="loginPassword" placeholder="Senha" required />
+      </div>
+      <button type="submit" class="form-button">Entrar</button>
+      <p class="message" id="loginMessage"></p>
+    </form>
 
-      <div id="guia" class="esqm">
-        <img id="g" src="/img/guia.jpg" alt="">
-        <div class="texto" style="display:none;"></div>
+    <!-- REGISTER FORM -->
+    <form id="registerForm" style="display: none;">
+      <h2>Cadastrar 🍀</h2>
+      <div class="input-group">
+        <img src="/img/usuário.png" alt="Nome">
+        <input type="text" id="registerName" placeholder="Nome completo" required />
+      </div>
+      <div class="input-group">
+        <img src="/img/o-email.png" alt="Email">
+        <input type="email" id="registerEmail" placeholder="E-mail" required />
+      </div>
+      <div class="input-group">
+        <img src="/img/senha.png" alt="Senha">
+        <input type="password" id="registerPassword" placeholder="Senha" required />
+      </div>
+      <div class="input-group">
+        <img src="/img/cidade.png" alt="Cidade">
+        <input type="text" id="registerCity" placeholder="Cidade" required />
+      </div>
+      <div class="input-group">
+        <img src="/img/estado.png" alt="Estado">
+        <input type="text" id="registerState" placeholder="Estado" required />
+      </div>
+      <button type="submit" class="form-button">Cadastrar</button>
+      <p class="message" id="registerMessage"></p>
+      <div class="input-group">
+        <img src="/img/foto-icon.png" alt="Ícone foto">
+        <input type="file" id="fotoPerfil" accept="image/*" />
       </div>
 
-      <div id="nov" class="esqm"><a href="src/novidades.html">
-          <img id="n" src="/img/nov.jpg" alt=""></a>
-        <div class="texto" style="display:none;"></div>
-      </div>
+    </form>
 
-      <div id="clima" class="esqm"><a href="src/clima.html">
-          <img id="cl" src="/img/clima.jpg" alt=""></a>
-        <div class="texto" style="display:none;"></div>
-      </div>
-
-      <div id="tutorial" class="esqm"><a href="src/tutorial.html">
-          <img id="t" src="/img/tutorial.jpg" alt=""></a>
-        <div class="texto" style="display:none;"></div>
-      </div>
-
-    </section>
-
-    <section id="direita" class="manos">
-
-      <div id="perfil" class="dirm"><a href="/src/perfil.html">
-          <img id="p" src="/img/perfil.jpg" alt=""></a>
-        <div class="texto" style="display:none;"></div>
-      </div>
-
-
-
-      <div id="rega" class="dirm"><a href="src/calendario.html">
-          <img id="r" src="/img/rega.jpg" alt=""></a>
-        <div class="texto" style="display:none;"></div>
-      </div>
-
-      <div id="plantas" class="dirm"><a href="/src/suaplantas.html">
-          <img id="pl" src="/img/suasplantas.jpg" alt=""></a>
-        <div class="texto" style="display:none;"></div>
-      </div>
-      <div id="catalogo" class="dirm"><a href="/src/catalogo.html">
-          <img id="c" src="/img/catalogo.jpg" alt=""></a>
-        <div class="texto" style="display:none;"></div>
-      </div>
-    </section>
-    <div style="clear: both;"></div>
-
-    <div id="container2">
-      <div class="card" style="--cor:#66CDAA;">
-        <div class="caixaimg">
-          <img src="./img/joaozao.jpg" alt="">
-        </div>
-        <div class="conteudo">
-          <h2>João Vitor Cosmo </h2>
-          <p>16 anos <br> Estudante do segundo ano do <br> Centro de Referência IFPR - Biopark </p>
-        </div>
-      </div>
-      <div class="card" style="--cor:#66CDAA;">
-        <div class="caixaimg">
-          <img src="./img/maria.jpg" alt="">
-        </div>
-        <div class="conteudo">
-          <h2>Maria L. Schossler</h2>
-          <p>17 anos <br> Estudante do segundo ano do <br> Centro de Referência IFPR - Biopark</p>
-        </div>
-      </div>
+    <div class="toggle-form">
+      <span id="toggleText">Não tem uma conta?</span>
+      <button id="toggleButton">Cadastrar</button>
     </div>
+  </div>
 
+  <script>
+    const loginForm = document.getElementById('loginForm');
+    const registerForm = document.getElementById('registerForm');
+    const toggleButton = document.getElementById('toggleButton');
+    const toggleText = document.getElementById('toggleText');
+    const loginMessage = document.getElementById('loginMessage');
+    const registerMessage = document.getElementById('registerMessage');
 
-    <footer>
-      <div class="gif-container">
-        <img src="img/flores.gif" alt="GIF animado de plantas" class="footer-gif" />  
-         
-        </div>
-      </div>
-    </footer>
+    const users = [];
 
-    <script>
-      const checkbox = document.getElementById('check');
+    toggleButton.addEventListener('click', () => {
+      const isLogin = loginForm.style.display !== 'none';
+      loginForm.style.display = isLogin ? 'none' : 'block';
+      registerForm.style.display = isLogin ? 'block' : 'none';
+      toggleButton.textContent = isLogin ? 'Entrar' : 'Cadastrar';
+      toggleText.textContent = isLogin ? 'Já tem uma conta?' : 'Não tem uma conta?';
+      loginMessage.textContent = '';
+      registerMessage.textContent = '';
+    });
 
-      function toggleArea(id, descricao) {
-        const area = document.getElementById(id);
-        const img = area.querySelector('img');
-        const texto = area.querySelector('.texto');
+    loginForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const email = document.getElementById('loginEmail').value;
+      const password = document.getElementById('loginPassword').value;
 
-        if (checkbox.checked) {
-          img.style.opacity = '0'; // Esconde visualmente a imagem sem quebrar layout
-          img.style.pointerEvents = 'none'; // Evita interações
-          texto.textContent = descricao;
-          texto.style.display = 'block';
-          area.classList.add('moldura-ativa');
-        } else {
-          img.style.opacity = '1'; // Mostra a imagem de novo
-          img.style.pointerEvents = 'auto';
-          texto.style.display = 'none';
-          texto.textContent = '';
-          area.classList.remove('moldura-ativa');
-        }
+      const user = users.find(user => user.email === email && user.password === password);
+
+      if (user) {
+        loginMessage.style.color = '#2f7b32';
+        loginMessage.textContent = 'Login bem-sucedido! Redirecionando...';
+        setTimeout(() => {
+          window.location.href = "/paginicial.html";
+          // novo nome da sua página principal
+        }, 1500);
+      } else {
+        loginMessage.style.color = '#c0392b';
+        loginMessage.textContent = 'Credenciais inválidas.';  
+      }
+    });
+
+    registerForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const name = document.getElementById('registerName').value;
+      const email = document.getElementById('registerEmail').value;
+      const password = document.getElementById('registerPassword').value;
+      const city = document.getElementById('registerCity').value;
+      const state = document.getElementById('registerState').value;
+
+      const exists = users.some(user => user.email === email);
+
+      if (exists) {
+        registerMessage.style.color = '#c0392b';
+        registerMessage.textContent = 'E-mail já cadastrado.';
+      } else {
+        users.push({ name, email, password, city, state });
+        registerMessage.style.color = '#2f7b32';
+        registerMessage.textContent = 'Cadastro realizado com sucesso!';
+        setTimeout(() => {
+          toggleButton.click();
+        }, 1500);
       }
 
-      checkbox.addEventListener('change', () => {
-        const areas = [
-          ['guia', 'Este botão ativa ou desativa as descrições de cada seção do site.'],
-          ['nov', 'Confira aqui as últimas novidades e atualizações do Plantae Wiki.'],
-          ['clima', 'Veja o clima atual da sua região para saber as melhores práticas de cultivo.'],
-          ['tutorial', 'Aprenda jardinagem e agricultura básica: como plantar, cuidar e manter suas plantas saudáveis.'],
-          ['perfil', 'Acesse e edite as informações do seu perfil de usuário.'],
-          ['rega', 'Veja a lista das plantas que precisam ser regadas hoje.'],
-          ['plantas', 'Aqui estão as plantas que você selecionou e cadastrou no seu perfil.'],
-          ['catalogo', 'Explore nosso catálogo detalhado de plantas, incluindo informações sobre o tempo de plantio e duração. ']
-        ];
+      localStorage.setItem('userData', JSON.stringify({
+        nome: name,
+        email: email,
+        cidade: city,
+        estado: state,
+        desde: "Março de 2024" // ou gere a data atual dinamicamente
+      }));
 
-        areas.forEach(([id, descricao]) => toggleArea(id, descricao));
-      });
-    </script>
+      const file = document.getElementById('fotoPerfil').files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function () {
+          salvarUsuario(reader.result);
+        };
+        reader.readAsDataURL(file);
+      } else {
+        salvarUsuario(null);
+      }
 
+      function salvarUsuario(fotoBase64) {
+        localStorage.setItem('userData', JSON.stringify({
+          nome: name,
+          email: email,
+          cidade: city,
+          estado: state,
+          desde: "Março de 2024",
+          foto: fotoBase64
+        }));
+        registerMessage.style.color = '#2f7b32';
+        registerMessage.textContent = 'Cadastro realizado com sucesso!';
+        setTimeout(() => {
+          toggleButton.click(); // volta pro login
+        }, 1500);
+      }
+
+
+    });
+  </script>
 </body>
 
 </html>

@@ -14,9 +14,9 @@ body {
 }
 
 
-.icone-boboleta {
-  width: 80px;
-  height: 80px;
+.icone-folhas{
+  width: 50px;
+  height: 50px;
   object-fit: contain;
   flex-shrink: 0;
 }
@@ -36,7 +36,7 @@ body {
 .links a {
   background-color: #79bfa1;
   color: white;
-  padding: 10px 20px;
+  padding: 5px 15px;
   text-decoration: none;
   border-radius: 6px;
   transition: background 0.3s;
