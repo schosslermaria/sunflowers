@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> Perfil do Usuário</title>
+  <link href="https://fonts.googleapis.com/css2?family=Satisfy&family=Barlow+Condensed:wght@300;400;700&display=swap"
+    rel="stylesheet" />
+  <style>
+    :root {
+      --verde-claro: #e6edd9;
+      --verde-medio: #88c999;
+      --verde-escuro: #2b5d3b;
+      --texto-principal: #333;
+      --cinza-claro: #f8f9fa;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Barlow Condensed', sans-serif;
+      background-color: var(--cinza-claro);
+      color: var(--texto-principal);
+      height: 100%;
+    }
+
+    .header {
+      background-color: var(--verde-claro);
+      text-align: center;
+      padding: 25px 10px;
+      border-radius: 0 0 30px 30px;
+      position: relative;
+    }
+
+    .header h1 {
+      font-family: 'Satisfy', cursive;
+      font-size: 2.5em;
+      color: var(--verde-escuro);
+      margin-bottom: 15px;
+    }
+
+    .gif-banner {
+      width: 100%;
+      height: 180px;
+      background: url('/img/flores.gif') center/cover no-repeat;
+      border-radius: 20px 20px 0 0;
+      position: relative;
+    }
+
+
+    .foto-perfil {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 5px solid white;
+      background-color: white;
+      box-shadow: 0 0 0 3px var(--verde-medio);
+      position: absolute;
+      top: 130px;
+      /* Isso faz a imagem "invadir" o banner */
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+    }
+
+
+    .foto-perfil img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .perfil {
+      position: relative;
+      max-width: 850px;
+      margin: 30px auto;
+      background: #fff;
+      border-radius: 20px;
+      padding: 30px;
+      padding-top: 100px;
+      /* espaço extra pra compensar a imagem sobreposta */
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+
+    .icone-boboleta {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+
+    .nome-usuario {
+      font-size: 1.8em;
+      color: var(--verde-escuro);
+      margin-top: 5px;
+    }
+
+    .metricas {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin: 20px 0;
+      font-size: 1em;
+      color: #444;
+    }
+
+    .metricas div {
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .icone-pequeno {
+      width: 24px;
+      height: 24px;
+      display: block;
+      margin: 0 auto 4px;
+    }
+
+    .info-basica {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin: 20px 0;
+      flex-wrap: wrap;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1.1em;
+    }
+
+    .info-item img {
+      width: 20px;
+      height: 20px;
+    }
+
+    .plantas-favoritas {
+      margin-top: 30px;
+      text-align: left;
+    }
+
+    .plantas-favoritas p {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .carrossel {
+      display: flex;
+      overflow-x: auto;
+      gap: 15px;
+      padding-bottom: 10px;
+    }
+
+    .carrossel::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    .carrossel::-webkit-scrollbar-thumb {
+      background: var(--verde-medio);
+      border-radius: 10px;
+    }
+
+    .planta {
+      min-width: 90px;
+      text-align: center;
+    }
+
+    .planta img {
+      width: 75px;
+      height: 75px;
+      border-radius: 50%;
+      border: 2px solid #ccc;
+      object-fit: cover;
+      transition: transform 0.2s;
+    }
+
+    .planta img:hover {
+      transform: scale(1.1);
+    }
+
+    .grafico-nivel {
+      width: 250px;
+      margin: 30px auto 10px;
+    }
+
+    .nivel-label {
+      text-align: center;
+      font-weight: bold;
+      font-size: 1.1em;
+      color: #444;
+    }
+
+    .acoes {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .acoes h3 {
+      color: var(--verde-escuro);
+      font-size: 1.3em;
+      margin-bottom: 15px;
+    }
+
+    .botoes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+    }
+
+    .botao {
+      background-color: var(--verde-medio);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .botao:hover {
+      background-color: #72b484;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 60px;
+      font-size: 0.9em;
+      color: #666;
+    }
+
+    svg {
+      width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="header">
+    <h1> <img src="/img/flor amarelinhas.gif" alt="Germinação" class="icone-boboleta" />Perfil do Usuário</h1>
+  </header>
+
+  <section class="perfil">
+    <div class="gif-banner"></div>
+    <div class="foto-perfil">
+      <img id="fotoUsuario" src="/img/joaozao.jpg" alt="Foto de Perfil">
+    </div>
+    </div>
+
+    </div>
+
+
+    <div class="metricas">
+      <div>
+        <img src="/img/plantar.png" alt="Plantas" class="icone-pequeno">
+        <strong>12</strong><br>Plantas
+      </div>
+      <div>
+        <img src="/img/seguidor.png" alt="Seguidores" class="icone-pequeno">
+        <strong>58</strong><br>Seguidores
+      </div>
+      <div>
+        <img src="/img/seguir (1).png" alt="Seguindo" class="icone-pequeno">
+        <strong>34</strong><br>Seguindo
+      </div>
+    </div>
+
+    <h1>Perfil de <span id="perfilNome"></span></h1>
+
+
+    <div class="info-basica">
+      <div class="info-item">
+        <img src="/img/o-email.png" alt="Ícone de email">
+        <span id="perfilEmail">carregando...</span>
+      </div>
+      <div class="info-item">
+        <img src="/img/pin-de-localizacao.png" alt="Ícone de localização">
+        <span id="perfilLocal">carregando...</span>
+      </div>
+      <div class="info-item">
+        <img src="/img/calendario.png" alt="Ícone de calendário">
+        <span id="perfilDesde">carregando...</span>
+      </div>
+    </div>
+
+
+
+
+    <div class="plantas-favoritas">
+      <p>🌿 <strong>Plantas Favoritas:</strong></p>
+      <div class="carrossel">
+        <div class="planta">
+          <img src="/img/calateia.webp" alt="Girassol">
+          <p>Cataléia</p>
+        </div>
+        <div class="planta">
+          <img src="/img/melancia.jpg" alt="Manjericão">
+          <p>Pé de melancia</p>
+        </div>
+        <div class="planta">
+          <img src="/img/maranta.jpeg" alt="Tomate Cereja">
+          <p>Maranta</p>
+        </div>
+        <div class="planta">
+          <img src="/img/Palmeira Areca.webp" alt="Tomat">
+          <p>Palmeira Areca</p>
+        </div>
+        <div class="planta">
+          <img src="/img/orelhadecoelho.jpeg" alt="Tomate Cereja">
+          <p>Orelha de Coelho</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="grafico-nivel">
+      <svg viewBox="0 0 200 100">
+        <defs>
+          <linearGradient id="grad" x1="0%" y1="100%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="green" />
+            <stop offset="50%" stop-color="orange" />
+            <stop offset="100%" stop-color="red" />
+          </linearGradient>
+        </defs>
+        <path d="M10,100 A90,90 0 0,1 190,100" fill="none" stroke="url(#grad)" stroke-width="20" />
+        <line id="ponteiro" x1="100" y1="100" x2="100" y2="20" stroke="#333" stroke-width="4" stroke-linecap="round"
+          transform-origin="100 100" />
+      </svg>
+      <div class="nivel-label" id="nivel-label">Intermediário</div>
+    </div>
+  </section>
+
+  <section class="acoes">
+    <h3>Ações Rápidas</h3>
+    <div class="botoes">
+      <a href="suaplantas.html" class="botao">Minhas Plantas</a>
+      <a href="#" class="botao">Plantas para Regar Hoje</a>
+      <a href="/paginicial.html" class="botao">Voltar à Página Inicial</a>
+    </div>
+  </section>
+
+
+  <script>
+    const nivel = "Intermediário";
+    const ponteiro = document.getElementById("ponteiro");
+    const label = document.getElementById("nivel-label");
+
+    const angulos = {
+      "Iniciante": -60,
+      "Intermediário": 0,
+      "Mestre": 60
+    };
+
+    ponteiro.setAttribute("transform", `rotate(${angulos[nivel] || 0} 100 100)`);
+    label.textContent = nivel;
+
+  </script>
+
+  <script>
+    const dados = JSON.parse(localStorage.getItem("userData"));
+    if (dados) {
+      document.getElementById("perfilNome").textContent = dados.nome || "Usuário";
+      document.getElementById("perfilEmail").textContent = dados.email || "Não informado";
+      document.getElementById("perfilLocal").textContent = `${dados.cidade || "Cidade"}, ${dados.estado || "Estado"}`;
+      document.getElementById("perfilDesde").textContent = dados.desde || "Data não disponível";
+    } else {
+      alert("Nenhum dado de usuário encontrado. Faça login/cadastro primeiro.");
+      window.location.href = "/index.html";
+    }
+
+    const img = document.getElementById("fotoUsuario");
+    if (dados.foto) {
+      img.src = dados.foto;
+    }
+
+  </script>
+
+
+</body>
+
+</html>

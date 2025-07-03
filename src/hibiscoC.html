@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Calendário de Regas</title>
+   <link rel="stylesheet" href="/css/calendario.css">
+</head>
+<body>
+
+<div class="container">
+  <h1 class="title">Agenda de Regas da Planta</h1>
+
+  <div class="plant-card">
+    <img src="/img/hibisco.jpeg" alt="Planta Alecrim" class="plant-img">
+    <div class="plant-content">
+      <div>
+        <h2>Hibisco</h2>
+        <p>Use o calendário abaixo para marcar os dias que você regou sua planta.</p>
+
+        <div class="calendar-container">
+          <div class="calendar-header">
+            <button class="month-nav" id="prev-month">&lt;</button>
+            <span id="month-year"></span>
+            <button class="month-nav" id="next-month">&gt;</button>
+          </div>
+          <div class="calendar-grid" id="calendar"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const calendarEl = document.getElementById('calendar');
+  const monthYearEl = document.getElementById('month-year');
+  const prevBtn = document.getElementById('prev-month');
+  const nextBtn = document.getElementById('next-month');
+
+  let currentDate = new Date();
+  let markedDays = JSON.parse(localStorage.getItem('regs')) || {};
+
+  function save() {
+    localStorage.setItem('regs', JSON.stringify(markedDays));
+  }
+
+  function drawCalendar() {
+    calendarEl.innerHTML = '';
+    const year = currentDate.getFullYear();
+    const month = currentDate.getMonth();
+    monthYearEl.textContent = currentDate.toLocaleString('pt-BR', { month: 'long', year: 'numeric' });
+
+    const firstDay = new Date(year, month, 1).getDay();
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+    const prevDays = firstDay === 0 ? 6 : firstDay - 1;
+    const totalCells = prevDays + daysInMonth;
+    const nextDays = (7 - (totalCells % 7)) % 7;
+
+    for (let i = prevDays; i > 0; i--) {
+      const d = new Date(year, month, 1 - i);
+      createCell(d, true);
+    }
+
+    for (let d = 1; d <= daysInMonth; d++) {
+      createCell(new Date(year, month, d), false);
+    }
+
+    for (let d = 1; d <= nextDays; d++) {
+      createCell(new Date(year, month + 1, d), true);
+    }
+  }
+
+  function createCell(date, otherMonth) {
+    const y = date.getFullYear(), m = date.getMonth(), d = date.getDate();
+    const key = `${y}-${m+1}-${d}`;
+    const done = markedDays[key];
+
+    const el = document.createElement('div');
+    el.classList.add('calendar-cell');
+    if (otherMonth) el.classList.add('other-month');
+    if (!otherMonth && done) el.classList.add('done');
+
+    el.textContent = d;
+    el.addEventListener('click', () => {
+      if (otherMonth) return;
+      markedDays[key] = !markedDays[key];
+      el.classList.toggle('done');
+      save();
+    });
+    calendarEl.appendChild(el);
+  }
+
+  prevBtn.addEventListener('click', () => {
+    currentDate.setMonth(currentDate.getMonth() - 1);
+    drawCalendar();
+  });
+  nextBtn.addEventListener('click', () => {
+    currentDate.setMonth(currentDate.getMonth() + 1);
+    drawCalendar();
+  });
+
+  drawCalendar();
+</script>
+  <section class="links">
+    <a href="/src/calendario.html" class="botao-voltar">⬅ Voltar para as suas plantas</a>
+  </section>
+</body>
+</html>

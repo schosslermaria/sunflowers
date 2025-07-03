@@ -1,272 +1,325 @@
+ @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Dancing+Script:wght@400..700&family=Sevillana&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=DynaPuff:wght@400..700&family=Satisfy&display=swap');
  body {
-      font-family: 'Raleway', sans-serif;
-      margin: 0;
-      background: linear-gradient(to bottom, #d3f9d8, #a4c8a6);
-      padding: 2rem 1rem;
-    }
+     font-family: 'Raleway', sans-serif;
+     margin: 0;
+     background: linear-gradient(to bottom, #d3f9d8, #a4c8a6);
+     padding: 2rem 1rem;
+ }
 
-    .container {
-      max-width: 900px;
-      margin: auto;
-    }
+ .container {
+     max-width: 900px;
+     margin: auto;
+ }
 
-    h2 {
-      text-align: center;
-      color: #4CAF50;
-      margin-bottom: 2.5rem;
-    }
+ h2 {
+     text-align: center;
+     color: #4CAF50;
+     margin-bottom: 2.5rem;
+ }
 
-    .category-card {
-      background: #ffffff;
-      border-left: 6px solid #4c974f;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      padding: 1.5rem 1.5rem;
-      margin-bottom: 1.5rem;
-      transition: transform 0.2s ease;
-    }
+ .category-card {
+     background: #ffffff;
+     border-left: 6px solid #4c974f;
+     border-radius: 8px;
+     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+     padding: 1.5rem 1.5rem;
+     margin-bottom: 1.5rem;
+     transition: transform 0.2s ease;
+ }
 
-    .category-card:hover {
-      transform: translateY(-4px);
-    }
+ .category-card:hover {
+     transform: translateY(-4px);
+ }
 
-    .category-card strong {
-      color: #3a7b32;
-      font-size: 1.1rem;
-    }
+ .category-card strong {
+     color: #3a7b32;
+     font-size: 1.1rem;
+ }
 
-    .category-card p {
-      margin: 0.5rem 0 0 0;
-      color: #555;
-      line-height: 1.5;
-    }
+ .category-card p {
+     margin: 0.5rem 0 0 0;
+     color: #555;
+     line-height: 1.5;
+ }
 
-    .back-link {
-      display: block;
-      text-align: center;
-      margin-top: 2.5rem;
-      font-weight: bold;
-      text-decoration: none;
-      color: #4c974f;
-      font-size: 1.05rem;
-    }
+ .back-link {
+     display: block;
+     text-align: center;
+     margin-top: 2.5rem;
+     font-weight: bold;
+     text-decoration: none;
+     color: #4c974f;
+     font-size: 1.05rem;
+ }
 
-    .back-link:hover {
-      color: #2e6c35;
-    }
+ .back-link:hover {
+     color: #2e6c35;
+ }
 
-    /* Importação de fontes para um visual mais agradável */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+ /* Importação de fontes para um visual mais agradável */
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
 
 
-body {
-    font-family: 'Poppins', sans-serif; /* Fonte principal para o corpo */
-    margin: 0;
-    padding: 0;
-    background-color: #f7fcf4; /* Um verde bem clarinho ou off-white */
-    color: #333;
-    line-height: 1.6;
-}
+ body {
+     font-family: 'Poppins', sans-serif;
+     /* Fonte principal para o corpo */
+     margin: 0;
+     padding: 0;
+     background-color: #f7fcf4;
+     /* Um verde bem clarinho ou off-white */
+     color: #333;
+     line-height: 1.6;
+ }
 
-.container {
-    max-width: 1000px; /* Aumentado para melhor visualização */
-    margin: 30px auto;
-    padding: 30px;
-    background-color: #ffffff; /* Fundo branco para o container */
-    border-radius: 12px; /* Bordas mais arredondadas */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); /* Sombra mais suave e pronunciada */
-}
+ .container {
+     max-width: 1000px;
+     /* Aumentado para melhor visualização */
+     margin: 30px auto;
+     padding: 30px;
+     background-color: #ffffff;
+     /* Fundo branco para o container */
+     border-radius: 12px;
+     /* Bordas mais arredondadas */
+     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+     /* Sombra mais suave e pronunciada */
+ }
 
-/* --- Cabeçalho da Planta --- */
-.plant-header {
-    text-align: center;
-    margin-bottom: 40px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #e0e0e0; /* Linha divisória suave */
-}
+ /* --- Cabeçalho da Planta --- */
+ .plant-header {
+     text-align: center;
+     margin-bottom: 40px;
+     padding-bottom: 20px;
+     border-bottom: 1px solid #e0e0e0;
+     /* Linha divisória suave */
+ }
 
-.plant-header h1 {
-    font-family: 'Montserrat', sans-serif; /* Fonte diferente para o título principal */
-    font-size: 2.8em; /* Tamanho maior para o título */
-    color: #4CAF50; /* Cor verde para o título */
-    margin-bottom: 5px;
-    line-height: 1.2;
-}
+ .plant-header h1 {
+     font-family: 'Montserrat', sans-serif;
+     /* Fonte diferente para o título principal */
+     font-size: 2.8em;
+     /* Tamanho maior para o título */
+     color: #4CAF50;
+     /* Cor verde para o título */
+     margin-bottom: 5px;
+     line-height: 1.2;
+ }
 
-.plant-header h1 span {
-    font-size: 0.6em; /* Tamanho menor para o nome científico */
-    color: #757575;
-    display: block; /* Quebra de linha para o nome científico */
-    margin-top: 5px;
-    font-weight: 400;
-}
+ .plant-header h1 span {
+     font-size: 0.6em;
+     /* Tamanho menor para o nome científico */
+     color: #757575;
+     display: block;
+     /* Quebra de linha para o nome científico */
+     margin-top: 5px;
+     font-weight: 400;
+ }
 
-.plant-brief-description {
-    font-size: 1.1em;
-    color: #555;
-    max-width: 700px;
-    margin: 15px auto 0 auto;
-}
+ .plant-brief-description {
+     font-size: 1.1em;
+     color: #555;
+     max-width: 700px;
+     margin: 15px auto 0 auto;
+ }
 
-/* --- Seção de Visão Geral (Imagem e Informações Chave) --- */
-.plant-overview {
-    display: flex;
-    flex-wrap: wrap; /* Permite quebrar em telas menores */
-    gap: 30px;
-    margin-bottom: 40px;
-    align-items: center; /* Centraliza verticalmente os itens */
-}
+ /* --- Seção de Visão Geral (Imagem e Informações Chave) --- */
+ .plant-overview {
+     display: flex;
+     flex-wrap: wrap;
+     /* Permite quebrar em telas menores */
+     gap: 30px;
+     margin-bottom: 40px;
+     align-items: center;
+     /* Centraliza verticalmente os itens */
+ }
 
-.plant-image-wrapper {
-    flex: 0 0 350px; /* Tamanho fixo para a imagem em telas maiores */
-    height: 350px; /* Mantém a proporção */
-    overflow: hidden; /* Garante que a imagem não ultrapasse o contêiner */
-    border-radius: 15px; /* Bordas mais arredondadas para a imagem */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Sombra mais pronunciada */
-    background-color: #e8f5e9; /* Fundo suave para a área da imagem */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+ .plant-image-wrapper {
+     flex: 0 0 350px;
+     /* Tamanho fixo para a imagem em telas maiores */
+     height: 350px;
+     /* Mantém a proporção */
+     overflow: hidden;
+     /* Garante que a imagem não ultrapasse o contêiner */
+     border-radius: 15px;
+     /* Bordas mais arredondadas para a imagem */
+     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+     /* Sombra mais pronunciada */
+     background-color: #e8f5e9;
+     /* Fundo suave para a área da imagem */
+     display: flex;
+     align-items: center;
+     justify-content: center;
+ }
 
-.plant-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
-    display: block;
-}
+ .plant-image {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+     /* Garante que a imagem cubra o espaço sem distorcer */
+     display: block;
+ }
 
-.plant-key-info {
-    flex: 1; /* Ocupa o restante do espaço */
-    display: grid;
-    grid-template-columns: 1fr; /* Um card por linha em telas menores */
-    gap: 20px;
-}
+ .plant-key-info {
+     flex: 1;
+     /* Ocupa o restante do espaço */
+     display: grid;
+     grid-template-columns: 1fr;
+     /* Um card por linha em telas menores */
+     gap: 20px;
+ }
 
-.info-card {
-    background-color: #e8f5e9; /* Fundo verde claro para os cards de info */
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
+ .info-card {
+     background-color: #e8f5e9;
+     /* Fundo verde claro para os cards de info */
+     padding: 25px;
+     border-radius: 10px;
+     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+     transition: transform 0.2s ease, box-shadow 0.2s ease;
+ }
 
-.info-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-}
+ .info-card:hover {
+     transform: translateY(-5px);
+     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+ }
 
-.info-card strong {
-    color: #388E3C; /* Verde mais escuro para os títulos dos cards */
-    font-size: 1.2em;
-    display: block;
-    margin-bottom: 8px;
-}
+ .info-card strong {
+     color: #388E3C;
+     /* Verde mais escuro para os títulos dos cards */
+     font-size: 1.2em;
+     display: block;
+     margin-bottom: 8px;
+ }
 
-.info-card p {
-    font-size: 0.95em;
-    color: #444;
-}
+ .info-card p {
+     font-size: 0.95em;
+     color: #444;
+      font-family: "Barlow Condensed", sans-serif;
+         font-weight: normal;
+ }
 
-/* --- Detalhes da Planta em Grade --- */
-.plant-details-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Colunas responsivas */
-    gap: 30px;
-    margin-bottom: 40px;
-}
+ /* --- Detalhes da Planta em Grade --- */
+ .plant-details-grid {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+     /* Colunas responsivas */
+     gap: 30px;
+     margin-bottom: 40px;
+ }
 
-.detail-item {
-    background-color: #ffffff; /* Fundo branco para os itens de detalhe */
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    border: 1px solid #e0e0e0; /* Borda sutil */
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
+ .detail-item {
+     background-color: #ffffff;
+     /* Fundo branco para os itens de detalhe */
+     padding: 25px;
+     border-radius: 10px;
+     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+     border: 1px solid #e0e0e0;
+     /* Borda sutil */
+     transition: transform 0.2s ease, box-shadow 0.2s ease;
+ }
 
-.detail-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-}
+ .detail-item:hover {
+     transform: translateY(-5px);
+     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+ }
 
-.detail-item h3 {
-    color: #4CAF50; /* Verde para os títulos dos detalhes */
-    font-size: 1.3em;
-    margin-top: 0;
-    margin-bottom: 12px;
-    border-bottom: 2px solid #a5d6a7; /* Linha verde embaixo do título */
-    padding-bottom: 8px;
-    font-weight: 600;
-}
+ .detail-item h3 {
+     color: #4CAF50;
+     /* Verde para os títulos dos detalhes */
+     font-size: 1.3em;
+     margin-top: 0;
+     margin-bottom: 12px;
+     border-bottom: 2px solid #a5d6a7;
+     /* Linha verde embaixo do título */
+     padding-bottom: 8px;
+     font-weight: 600;
+ }
 
-.detail-item p {
-    font-size: 1em;
-    color: #555;
-}
+ .detail-item p {
+     font-size: 1em;
+     color: #555;
+      font-family: "Barlow Condensed", sans-serif;
+         font-weight: normal;
+ }
 
-/* --- Link de Voltar --- */
-.back-link {
-    display: inline-block;
-    margin-top: 30px;
-    padding: 12px 25px;
-    background-color: #4CAF50; /* Verde para o botão de voltar */
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-}
+ /* --- Link de Voltar --- */
+ .back-link {
+     display: inline-block;
+     margin-top: 30px;
+     padding: 12px 25px;
+     background-color: #4CAF50;
+     /* Verde para o botão de voltar */
+     color: white;
+     text-decoration: none;
+     border-radius: 8px;
+     transition: background-color 0.3s ease, transform 0.2s ease;
+     font-weight: 600;
+     letter-spacing: 0.5px;
+ }
 
-.back-link:hover {
-    background-color: #388E3C; /* Verde mais escuro no hover */
-    transform: translateY(-2px);
-}
+ .back-link:hover {
+     background-color: #388E3C;
+     /* Verde mais escuro no hover */
+     transform: translateY(-2px);
+ }
 
-/* --- Responsividade --- */
-@media (max-width: 900px) {
-    .plant-overview {
-        flex-direction: column; /* Pilha a imagem e as informações chave */
-        align-items: center;
-    }
+ /* --- Responsividade --- */
+ @media (max-width: 900px) {
+     .plant-overview {
+         flex-direction: column;
+         /* Pilha a imagem e as informações chave */
+         align-items: center;
+     }
 
-    .plant-image-wrapper {
-        flex: 0 0 auto; /* Remove o flex-basis fixo */
-        width: 80%; /* Ocupa mais largura em telas menores */
-        max-width: 300px; /* Limita o tamanho máximo da imagem */
-        height: auto; /* Altura automática para manter proporção */
-    }
+     .plant-image-wrapper {
+         flex: 0 0 auto;
+         /* Remove o flex-basis fixo */
+         width: 80%;
+         /* Ocupa mais largura em telas menores */
+         max-width: 300px;
+         /* Limita o tamanho máximo da imagem */
+         height: auto;
+         /* Altura automática para manter proporção */
+     }
 
-    .plant-details-grid {
-        grid-template-columns: 1fr; /* Uma coluna apenas em telas menores */
-    }
+     .plant-details-grid {
+         grid-template-columns: 1fr;
+         /* Uma coluna apenas em telas menores */
+     }
 
-    .plant-header h1 {
-        font-size: 2em;
-    }
+     .plant-header h1 {
+         font-size: 2em;
+     }
 
-    .plant-brief-description {
-        font-size: 1em;
-    }
-}
+     .plant-brief-description {
+         font-size: 1em;
+         font-family: "Barlow Condensed", sans-serif;
+         font-weight: normal;
+     }
+ }
 
-@media (max-width: 600px) {
-    .container {
-        padding: 20px;
-        margin: 20px auto;
-    }
+ @media (max-width: 600px) {
+     .container {
+         padding: 20px;
+         margin: 20px auto;
+     }
 
-    .plant-header h1 {
-        font-size: 1.8em;
-    }
+     .plant-header h1 {
+         font-size: 1.8em;
+     }
 
-    .plant-header h1 span {
-        font-size: 0.5em;
-    }
-    
-    .info-card, .detail-item {
-        padding: 20px;
-    }
+     .plant-header h1 span {
+         font-size: 0.5em;
+     }
+
+     .info-card,
+     .detail-item {
+         padding: 20px;
+     }
+ }
+
+ #titulo {
+  font-weight: normal;
+  font-family: Satisfy, sans-serif;
 }

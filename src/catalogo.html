@@ -1,60 +1,264 @@
 <!DOCTYPE html>
 <html lang="en">
+
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title><link rel="stylesheet" href="catalogo.css">
+    <title>Catálogo completo</title>
+    <link rel="stylesheet" href="/css/ai.css">
 </head>
+
 <body>
-    <section id="catalogo-plantae" class="section">
-  <h2>Catálogo de Plantas</h2>
-  <div class="catalogo-container">
-    <a href="alecrim.html">
-      <img src="img/alecrim.jpeg" alt="Alecrim">
-      <p>Alecrim</p>
-    </a>
-    <a href="alface.html">
-      <img src="/img/alface.jpeg" alt="Alface">
-      <p>Alface</p>
-    </a>
-    <a href="echeveria.html">
-      <img src="img/echeveria.jpeg" alt="Echeveria">
-      <p>Echeveria</p>
-    </a>
-    <a href="girassol.html">
-      <img src="img/girassol.jpeg" alt="Girassol">
-      <p>Girassol</p>
-    </a>
-    <a href="hibisco.html">
-      <img src="img/hibisco.jpeg" alt="Hibisco">
-      <p>Hibisco</p>
-    </a>
-    <a href="lavanda.html">
-      <img src="img/lavanda.jpeg" alt="Lavanda">
-      <p>Lavanda</p>
-    </a>
-    <a href="manjericao.html">
-      <img src="img/manjericao.jpeg" alt="Manjericão">
-      <p>Manjericão</p>
-    </a>
-    <a href="orelhadecoelho.html">
-      <img src="img/orelhadecoelho.jpeg" alt="Orelha de Coelho">
-      <p>Orelha de Coelho</p>
-    </a>
-    <a href="orquideia.html">
-      <img src="img/orquideia.jpeg" alt="Orquídea">
-      <p>Orquídea</p>
-    </a>
-    <a href="rosa.html">
-      <img src="img/rosa.jpeg" alt="Rosa">
-      <p>Rosa</p>
-    </a>
-    <a href="tomatecereja.html">
-      <img src="img/tomatecereja.jpeg" alt="Tomate Cereja">
-      <p>Tomate Cereja</p>
-    </a>
-  </div>
-</section>
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Buscar planta...">
+        <button onclick="searchPlant()" class="search-button">
+            <img src="/img/lupa.png" alt="Lupa" class="lupa-icon">
+        </button>
+    </div>
+    </div>
+
+
+    <section id="materiais" class="section">
+        <h2> <img src="/img/arvore.gif" alt="Germinação" class="icone-boboleta" />Catálogo <img
+                src="/img/duas flores.gif" alt="Germinação" class="icone-boboleta" /></h2>
+
+        <!-- Ervas Aromáticas -->
+        <h3>Ervas aromáticas: </h3>
+        <div class="materiais-container">
+            <div class="material">
+                <a href="/src/alecrim.html" class="material-link">
+                    <h3>Alecrim</h3>
+                    <img src="/img/alecrim.jpeg" alt="Imagem de alecrim">
+                    <p>Uma erva perene e aromática, muito usada na culinária mediterrânea e com propriedades medicinais.
+                        É resistente e se adapta bem a climas secos.</p>
+                </a>
+            </div>
+            <div class="material">
+                <a href="/src/manjericao.html" class="material-link">
+                    <h3>Manjericão</h3>
+                    <img src="/img/magericão.webp" alt="Imagem de manjericão">
+                    <p>Erva anual muito apreciada na culinária, especialmente em pratos italianos. Possui um aroma
+                        delicioso e folhas verdes vibrantes.</p>
+                </a>
+            </div>
+        </div>
+
+        <!-- Flores Ornamentais -->
+        <h3>Flores ornamentais: <img src="/img/duas florzinhas.gif" alt="Germinação" class="icone-boboleta" /></h3>
+        <div class="materiais-container">
+            <div class="material">
+                <a href="/src/girassol.html" class="material-link">
+                    <h3>Girassol</h3>
+                    <img src="/img/girassol.jpeg" alt="Imagem de girassol">
+                    <p>Conhecido por suas grandes e vibrantes flores amarelas que seguem o movimento do sol. É um
+                        símbolo de felicidade e vitalidade.</p>
+                </a>
+            </div>
+            <div class="material">
+                <a href="/src/lavanda.html" class="material-link">
+                    <h3>Lavanda</h3>
+                    <img src="/img/lavanda.jpeg" alt="Imagem de lavanda">
+                    <p>Uma flor perene com flores roxas perfumadas, muito usada em aromaterapia, cosméticos e como
+                        planta ornamental. Atrai polinizadores.</p>
+                </a>
+            </div>
+            <div class="material">
+                <a href="/src/orquideia.html" class="material-link">
+                    <h3>Orquídea</h3>
+                    <img src="/img/orquidea.jpeg" alt="Imagem de orquídea">
+                    <p>Conhecidas por suas flores duradouras e elegantes. Embora pareçam delicadas, são relativamente
+                        fáceis de cuidar se as condições ideais forem mantidas.</p>
+                </a>
+            </div>
+            <div class="material">
+                <a href="/src/hibisco.html" class="material-link">
+                    <h3>Hibisco</h3>
+                    <img src="/img/hibisco.jpeg" alt="Imagem de hibisco">
+                    <p>É um símbolo de beleza tropical e atrai beija-flores. Embora as flores individuais durem apenas
+                        um dia, a planta produz muitas ao longo da estação.</p>
+                </a>
+            </div>
+            <div class="material">
+                <a href="/src/rosa.html" class="material-link">
+                    <h3>Rosa</h3>
+                    <img src="/img/rosa.webp" alt="Imagem de rosa">
+                    <p>As rosas são talvez as flores mais populares e cultivadas no mundo, valorizadas por sua beleza,
+                        fragrância e variedade de cores e formas. Símbolo de amor e paixão, exigem alguns cuidados, mas
+                        recompensam com flores espetaculares.</p>
+                </a>
+            </div>
+        </div>
+        <h3> <img src="/img/cactus.gif" alt="Germinação" class="icone-boboleta" />Cactos:</h3>
+        <div class="materiais-container">
+            <div class="material">
+                <a href="/src/orelhadecoelho.html" class="material-link">
+                    <h3>Orelha-de-coelho</h3>
+                    <img src="/img/orelhadecoelho.jpeg" alt="Imagem de cacto orelha-de-coelho">
+                    <p>Um cacto muito popular, conhecido por suas almofadas achatadas que se assemelham a orelhas de
+                        coelho. Não possui espinhos pontiagudos, mas sim gloquídios (pequenos pelos que podem irritar a
+                        pele). É ideal para quem busca um toque diferente e divertido.</p>
+                </a>
+            </div>
+            <div class="material">
+                <a href="/src/echeveria.html" class="material-link">
+                    <h3>Echeveria</h3>
+                    <img src="/img/Echeveria.webp" alt="Imagem de echeveria">
+                    <p>Uma suculenta popular conhecida por suas rosetas simétricas e cores variadas. São resistentes e
+                        de baixa manutenção, ótimas para iniciantes.</p>
+                </a>
+            </div>
+        </div>
+        <h3>Legumes: <img src="/img/borboletinha rosa.gif" alt="Germinação" class="icone-boboleta" /></h3>
+        <div class="materiais-container">
+            <div class="material">
+                <a href="/src/alface.html" class="material-link">
+                    <h3>Alface</h3>
+                    <img src="/img/alface.jpeg" alt="Imagem de alface">
+                    <p>Uma folha verde popular e fácil de cultivar, essencial para saladas e diversos pratos. Existem
+                        muitas variedades de alface.</p>
+                </a>
+            </div>
+            <div class="material">
+                <a href="/src/tomatecereja.html" class="material-link">
+                    <h3>Tomate-cereja</h3>
+                    <img src="/img/tomate.webp" alt="Imagem de tomate cereja">
+                    <p>Pequenos e doces tomates, perfeitos para saladas, petiscos e decoração. São produtivos e ideais
+                        para quem está começando.</p>
+                </a>
+            </div>
+        </div>
+        <h3> <img src="/img/melancia.gif" alt="Germinação" class="icone-boboleta" />Árvores frutíferas:</h3>
+        <div class="materiais-container">
+            <div class="material">
+                <a href="/src/goiabeira.html" class="material-link">
+                    <h3>Goiabeira</h3>
+                    <img src="/img/goiabeira.jpg" alt="Imagem de cacto orelha-de-coelho">
+                    <p>Árvore frutífera tropical muito popular, conhecida pelos frutos saborosos e ricos em vitamina C.
+                        Cresce bem em climas quentes e solos bem drenados. Além do fruto, suas folhas têm propriedades
+                        medicinais tradicionais.</p>
+                </a>
+            </div>
+            <div class="material">
+                <a href="/src/jabuticabeira.html" class="material-link">
+                    <h3>Jabuticabeira</h3>
+                    <img src="/img/jabuticaba.jpeg" alt="Imagem de cacto orelha-de-coelho">
+                    <p> Os frutos são doces e muito apreciados, usados para fazer sucos, doces e até licores. Ela
+                        floresce e frutifica várias vezes ao ano, principalmente em regiões com clima úmido. Além de ser
+                        bonita para jardins, a jabuticabeira tem um valor cultural e gastronômico grande no Brasil.</p>
+                </a>
+            </div>
+            <div class="material">
+                <a href="/src/laranjeira.html" class="material-link">
+                    <h3>Laranjeira</h3>
+                    <img src="/img/laranjeira.jpg" alt="Imagem de cacto orelha-de-coelho">
+                    <p> A laranjeira é uma árvore frutífera bastante conhecida, que produz frutos cítricos saborosos e
+                        ricos em vitamina C. Além de oferecer frutas usadas para sucos, sobremesas e temperos, a
+                        laranjeira também é ornamental, com flores brancas perfumadas que atraem abelhas e outros
+                        polinizadores. </p>
+                </a>
+            </div>
+            <div class="material">
+                <a href="/src/macieira.html" class="material-link">
+                    <h3>Macieira</h3>
+                    <img src="/img/maça.jpg" alt="Imagem de cacto orelha-de-coelho">
+                    <p> Ela precisa de um período de frio para florescer bem, o que limita seu cultivo a lugares com
+                        invernos definidos. Suas flores são delicadas e ajudam a atrair polinizadores. A macieira é
+                        muito valorizada tanto pelo valor econômico quanto pela beleza que traz ao pomar, com folhas
+                        verdes e flores brancas ou rosadas na primavera. </p>
+                </a>
+            </div>
+            <div class="material">
+                <a href="/src/melancia.html" class="material-link">
+                    <h3>Pé de melancia</h3>
+                    <img src="/img/melancia.jpg" alt="Imagem de cacto orelha-de-coelho">
+                    <p> O pé de melancia é uma planta trepadeira que produz os frutos grandes, suculentos e refrescantes
+                        conhecidos como melancias. A melancia é muito apreciada pelo sabor doce e pela alta quantidade
+                        de água, perfeita para dias quentes. Além do fruto, a planta tem folhas grandes que ajudam a
+                        proteger o solo do ressecamento. </p>
+                </a>
+            </div>
+            <div class="material">
+                <a href="/src/pessegueiro.html" class="material-link">
+                    <h3>Pessegueiro</h3>
+                    <img src="/img/pessegueiro.webp" alt="Imagem de cacto orelha-de-coelho">
+                    <p> O pessegueiro é uma árvore frutífera que produz pêssegos doces e suculentos, muito apreciados no
+                        mundo todo. Suas flores delicadas, geralmente rosadas, surgem na primavera e são importantes
+                        para a polinização. Além de seus frutos saborosos, a árvore traz beleza ao pomar com sua
+                        folhagem e flores coloridas. </p>
+                </a>
+            </div>
+        </div>
+        <h3>Plantas seguras para pets: <img src="/img/dog.gif" alt="Germinação" class="icone-dog" /></h3>
+
+        <div class="materiais-container">
+            <div class="material">
+                <a href="/src/cataleia.html" class="material-link">
+                    <h3>Cataléia</h3>
+                    <img src="/img/calateia.webp" alt="Imagem de cacto orelha-de-coelho">
+                    <p>Folhas com desenhos únicos, perfeita para interiores. Gosta de sombra e umidade, e não representa
+                        risco para cães e gatos.</p>
+                </a>
+            </div>
+            <div class="material">
+                <a href="/src/maranta.html" class="material-link">
+                    <h3>Maranta</h3>
+                    <img src="/img/maranta.jpeg" alt="Imagem de cacto orelha-de-coelho">
+                    <p> Folhagem linda com padrões coloridos e movimento sensível à luz (as folhas se fecham à noite).
+                        Segura para pets.</p>
+                </a>
+            </div>
+            <div class="material">
+                <a href="/src/palmeiraareca.html" class="material-link">
+                    <h3>Palmeira Areca</h3>
+                    <img src="/img/Palmeira Areca.webp" alt="Imagem de cacto orelha-de-coelho">
+                    <p>Palmeira elegante e comum em salas ou escritórios. Não é tóxica e também ajuda a purificar o ar.
+                    </p>
+                </a>
+            </div>
+            <div class="material">
+                <a href="/src/palntapantera.html" class="material-link">
+                    <h3>Planta Pantera</h3>
+                    <img src="/img/Planta-Pantera.webp" alt="Imagem de cacto orelha-de-coelho">
+                    <p>Folhas pequenas, arredondadas e brilhantes. Resistente e ótima para vasos. Comprovadamente segura
+                        para pets. </p>
+                </a>
+            </div>
+            <div class="material">
+                <a href="/src/violetaafricana.html" class="material-link">
+                    <h3>Violeta Africana</h3>
+                    <img src="/img/violetaafricana.webp" alt="Imagem de cacto orelha-de-coelho">
+                    <p>Pequena flor delicada e de baixa manutenção, segura para animais e perfeita para interiores com
+                        luz indireta.</p>
+                </a>
+            </div>
+        </div>
+        <section class="links">
+            <a class="back-link" href="/paginicial.html">⬅ Voltar para página inicial</a>
+        </section>
+    </section>
+    <script>
+        function searchPlant() {
+            const input = document.getElementById("searchInput").value.toLowerCase();
+            const materials = document.querySelectorAll(".material");
+
+            for (let material of materials) {
+                const title = material.querySelector("h3").textContent.toLowerCase();
+                if (title.includes(input)) {
+                    material.scrollIntoView({ behavior: 'smooth' });
+                    material.style.border = "3px solid #49c453";
+                    setTimeout(() => {
+                        material.style.border = "2px solid #164b05";
+                    }, 2000);
+                    return;
+                }
+            }
+
+            alert("Planta não encontrada.");
+        }
+    </script>
+
 
 </body>
+
 </html>

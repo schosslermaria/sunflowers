@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Suas Plantas</title>
+  <link rel="stylesheet" href="/css/suasplantas.css">
+</head>
+
+<body>
+
+  <header>
+    <h1 id="titulo">  Minha Coleção de Plantas <img src="/img/verdinhas.gif" alt="Germinação" class="icone-boboleta" /></h1>
+  </header>
+
+  <section class="planta-lista">
+
+    <a class="planta-link" href="/src/cataleia.html">
+      <div class="planta-linha">
+        <strong class="planta-coluna">Cataleia</strong>
+        <div class="planta-coluna">Estação: Verão</div>
+        <div class="planta-coluna">Gênero: Helianthus</div>
+        <div class="planta-coluna">Luz: Plena</div>
+        <div class="planta-coluna icone">✅</div>
+      </div>
+    </a>
+
+    <a class="planta-link" href="/src/melancia.html">
+      <div class="planta-linha">
+        <strong class="planta-coluna">Melancia</strong>
+        <div class="planta-coluna">Estação: Verão</div>
+        <div class="planta-coluna">Gênero: Hibiscus</div>
+        <div class="planta-coluna">Luz: Plena</div>
+        <div class="planta-coluna icone">✅</div>
+      </div>
+    </a>
+
+    <a class="planta-link" href="/src/maranta.html">
+      <div class="planta-linha">
+        <strong class="planta-coluna">Maranta</strong>
+        <div class="planta-coluna">Estação: Primavera</div>
+        <div class="planta-coluna">Gênero: Lavandula</div>
+        <div class="planta-coluna">Luz: Plena</div>
+        <div class="planta-coluna icone">✅</div>
+      </div>
+    </a>
+
+    <a class="planta-link" href="/src/palmeiraareca.html">
+      <div class="planta-linha">
+        <strong class="planta-coluna">Palmeira Areca</strong>
+        <div class="planta-coluna">Estação: Verão</div>
+        <div class="planta-coluna">Gênero: Ocimum</div>
+        <div class="planta-coluna">Luz: Direta</div>
+        <div class="planta-coluna icone">✅</div>
+      </div>
+    </a>
+
+    <a class="planta-link" href="/src/orelhadecoelho.html">
+      <div class="planta-linha">
+        <strong class="planta-coluna">Orelha de Coelho</strong>
+        <div class="planta-coluna">Estação: Todas</div>
+        <div class="planta-coluna">Gênero: Opuntia</div>
+        <div class="planta-coluna">Luz: Plena</div>
+        <div class="planta-coluna icone">✅</div>
+      </div>
+    </a>
+  </section>
+
+  <a href="/paginicial.html" class="botao-voltar">⬅ Voltar para o Início</a>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const plantas = document.querySelectorAll(".planta-link");
+    plantas.forEach((card, i) => {
+      card.style.opacity = 0;
+      card.style.transform = "translateY(20px)";
+      setTimeout(() => {
+        card.style.transition = "all 0.6s ease";
+        card.style.opacity = 1;
+        card.style.transform = "translateY(0)";
+      }, i * 100);
+    });
+  });
+</script>
+
+
+</body>
+
+</html>

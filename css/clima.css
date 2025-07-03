@@ -1,0 +1,136 @@
+/* clima.css */
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=DynaPuff:wght@400..700&family=Satisfy&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+  color: #2e3d34;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: normal;
+}
+
+#titulo{
+  font-weight: normal;
+  font-family: Satisfy, sans-serif;
+}
+.header {
+  background-color: #e6edd9;
+  text-align: center;
+  padding: 20px;
+  color: #2f3d2f;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: normal;
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+}
+
+.resumo {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: normal;
+}
+
+.resumo .temperatura {
+  font-size: 3em;
+  margin: 10px 0;
+}
+
+.resumo .descricao {
+  font-size: 1.5em;
+  margin: 5px 0;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: normal;
+}
+
+.detalhes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: #ffffff;
+  border-radius: 10px;
+  margin-top: 30px;
+  padding: 20px;
+  gap: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.detalhes div {
+  flex: 1 1 30%;
+  min-width: 150px;
+}
+
+.previsao {
+  margin-top: 40px;
+}
+
+.previsao h3 {
+  text-align: center;
+  color: #2e3d34;
+}
+
+.dias {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.dia {
+  background-color: #fff;
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px;
+  width: 120px;
+  box-shadow: 0 0 6px rgba(0,0,0,0.05);
+}
+
+.dia img {
+  width: 50px;
+  height: 50px;
+}
+
+.links {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.links a {
+  background-color: #79bfa1;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+
+.links a:hover {
+  background-color: #64a68c;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 60px;
+  padding: 20px;
+  background-color: #d9f0e3;
+  font-size: 0.9em;
+  color: #4e5e54;
+}
+.icone-clima {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
